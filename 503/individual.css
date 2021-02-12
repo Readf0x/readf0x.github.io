@@ -1,0 +1,54 @@
+/*If you can code, contact me on discord! readf0x#6685*/
+html {
+  background-color: #1b1a1a;
+}
+.window {
+  font-family: "Droid Sans Mono Regular";
+  display: block;
+  width: 500px;
+  height: 300px;
+  margin: auto;
+  /*box-shadow: 0px 0px 5px black;*/
+  border: 1px solid #ffffff0d;
+  background-color: #201f1e;
+}
+.padding {
+  padding: 10px;
+  padding-top: 0px;
+}
+.blinds {
+  margin: 0;
+  padding: 0;
+  height: 32px;
+  background-color: black;
+}
+.icon {
+  display: inline;
+  float: right;
+  border-top: 11px solid black;
+  border-bottom: 11px solid black;
+  border-left: 18px solid black;
+  border-right: 18px solid black;
+}
+.app.icon {
+  float: left;
+  border-top: 8px solid black;
+  border-bottom: 8px solid black;
+  border-left: 8px solid black;
+  border-right: 8px solid black;
+}
+.title {
+  /*display: none;*/
+  margin: 0;
+  padding-top: 9px;
+  font-size: 12px;
+  display: inline-block;
+}
+.close:hover {
+  background-color: #e81123;
+  border-color: #e81123;
+}
+.max:hover, .mini:hover {
+  background-color: #1a1a1a;
+  border-color: #1a1a1a;
+}
