@@ -29,7 +29,25 @@ html {
   border-left: 18px solid black;
   border-right: 18px solid black;
 }
+.app.icon {
+  float: left;
+  border-top: 8px solid black;
+  border-bottom: 8px solid black;
+  border-left: 8px solid black;
+  border-right: 8px solid black;
+}
+.title {
+  /*display: none;*/
+  margin: 0;
+  padding-top: 9px;
+  font-size: 12px;
+  display: inline-block;
+}
 .close:hover {
   background-color: #e81123;
   border-color: #e81123;
+}
+.max:hover, .mini:hover {
+  background-color: #1a1a1a;
+  border-color: #1a1a1a;
 }
