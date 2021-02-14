@@ -1,5 +1,7 @@
 html {
   background-color: white;
+  background-image: url(download4.png);
+  background-size: 100px 100px;
 }
 .content {
   background-image: url(a3d937efb1b9cb36b64597924f30ddc2.jpg);
@@ -11,6 +13,8 @@ html {
 }
 .image {
   background-color: white;
+  background-image: url(download3.png);
+  background-size: 40px 50px;
 }
 .cursorHover {
   cursor: pointer;
