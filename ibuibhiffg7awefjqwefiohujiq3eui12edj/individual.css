@@ -18,4 +18,12 @@ html {
 .header {
   color: lime;
   font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-size: 10px;
+  text-align: center;
+  background-image: url(download6.png);
+}
+.body {
+  color: black;
+  width: 1500px;
+  margin: auto;
 }
