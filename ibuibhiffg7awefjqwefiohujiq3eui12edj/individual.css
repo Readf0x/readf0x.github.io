@@ -1,6 +1,5 @@
 html {
   background-color: white;
-  color: lime;
 }
 .content {
   background-image: url(a3d937efb1b9cb36b64597924f30ddc2.jpg);
@@ -15,4 +14,8 @@ html {
 }
 .cursorHover {
   cursor: pointer;
+}
+.header {
+  color: lime;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
