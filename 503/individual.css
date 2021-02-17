@@ -42,6 +42,7 @@ html {
   padding-top: 9px;
   font-size: 12px;
   display: inline-block;
+  font-family: "Segoe UI", monospace;
 }
 .close:hover {
   background-color: #e81123;
