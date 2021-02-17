@@ -11,6 +11,14 @@ html {
   .popup {
     display: block !important;
   }
+  a:link, a:visited, a:active {
+    color: #aecbfa !important;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #aecbfa !important;
+    text-decoration: none;
+  }
 }
 .window {
   font-family: "Droid Sans Mono Regular", monospace;

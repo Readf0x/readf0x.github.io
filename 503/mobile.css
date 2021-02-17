@@ -3,11 +3,13 @@ html {
 }
 .popup {
   display: block;
-  width: 623px;
-  height: 506px;
+  width: 533px;
+  height: 306px;
   margin: auto;
   background-color: #3c4043;
   border-radius: 20px;
+  font-family: "Product Sans";
+  color: #fff;
 }
 .icon-mobile {
   width: 35px;
@@ -15,4 +17,13 @@ html {
   display: block;
   margin: auto;
   padding-top: 35px;
+}
+h1.mobile-header {
+  text-align: center;
+  margin-top: 39px;
+  margin-bottom: 39px;
+}
+p.mobile-desc {
+  width: 400px;
+  margin: auto;
 }
