@@ -2,7 +2,7 @@ html {
   background-color: #1b1a1a;
 }
 .window {
-  font-family: "Droid Sans Mono Regular";
+  font-family: "Droid Sans Mono Regular", monospace;
   display: block;
   width: 500px;
   height: 300px;

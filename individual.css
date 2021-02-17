@@ -1,9 +1,30 @@
 /*If you can code, contact me on discord! readf0x#6685*/
+:root {
+  --banner-font-size: 35px;
+  --banner-height: 300px;
+}
 .banner {
-  background-image: url(//readf0x.github.io/img/banner.jpg);
-  background-size: auto;
+  background-image: url(https://readf0x.github.io/img/banner.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
   background-position: 0px -100px;
-  height: 300px;
+  height: var(--banner-height);
+}
+.banner > h1 {
+  font-family: "Droid Sans Mono Regular", monospace;
+  font-size: var(--banner-font-size);
+  text-align: center;
+  margin: 0;
+  padding-top: calc(calc(var(--banner-height) / 2) - var(--banner-font-size));
+}
+@media only screen and (max-width: 900px) {
+  .banner {
+    --banner-height: 150px;
+    background-position: 0px -50px;
+  }
+  .banner > h1 {
+    --banner-font-size: 17.5px;
+  }
 }
 body {
   margin: 0 !important;
