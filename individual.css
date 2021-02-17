@@ -17,7 +17,7 @@
   margin: 0;
   padding-top: calc(calc(var(--banner-height) / 2) - var(--banner-font-size));
 }
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 380px) {
   .banner {
     --banner-height: 150px;
     background-position: 0px -50px;

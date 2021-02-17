@@ -4,8 +4,11 @@
   border: 10px outset #73022e;
   border-top-right-radius: 37.5%;
   border-bottom-left-radius: 37.5%;
-  transform: rotate(135deg);
-  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   background-color: #adadad;
 }
 .pupil {
