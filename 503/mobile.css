@@ -3,9 +3,14 @@ html {
 }
 .popup {
   display: block;
-  width: 533px;
+  width: 573px;
   height: 306px;
-  margin: auto;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   background-color: #3c4043;
   border-radius: 20px;
   font-family: "Product Sans";
