@@ -1,0 +1,18 @@
+html {
+  background-color: #1b1a1a;
+}
+.popup {
+  display: block;
+  width: 623px;
+  height: 506px;
+  margin: auto;
+  background-color: #3c4043;
+  border-radius: 20px;
+}
+.icon-mobile {
+  width: 35px;
+  height: 35px;
+  display: block;
+  margin: auto;
+  padding-top: 35px;
+}

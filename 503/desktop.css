@@ -1,6 +1,17 @@
 html {
   background-color: #1b1a1a;
 }
+.popup {
+  display: none;
+}
+@media screen and (max-width: 720px) {
+  .window {
+    display: none !important;
+  }
+  .popup {
+    display: block !important;
+  }
+}
 .window {
   font-family: "Droid Sans Mono Regular", monospace;
   display: block;
