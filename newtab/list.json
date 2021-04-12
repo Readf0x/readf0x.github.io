@@ -1,0 +1,11 @@
+//NAMESPACE INDEX
+//yt : youtube video id
+//rd : [ "sub : subreddit", "post : post url" ]
+//ph : pornhub video id
+//rg : redgifs video id
+//tw : [ "user : twitter @", "post : post id" ]
+//ig : imgur post id
+
+{
+"":""
+}
