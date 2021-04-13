@@ -6,8 +6,10 @@
 //tw : //twitter.com/%user%/status/%id%
 //ig : //i.imgur.com/
 //nh : //nhentai.net/g/
+//url: direct link (for unkown or special sites)
 
 {
+"url":"//github.com/Readf0x/the-gallery",
 "rg":"overduegrowingamazonparrot",
 "rg":"muffledthankfulheron",
 "rg":"gummyswelteringsunfish",
@@ -15,6 +17,9 @@
 "rg":"moralthinredstart",
 "rg":"essentialvirtualstickleback",
 "ig":"LPznAHH.jpg",
+"ig":"8CA3YRL.jpg",
+"rg":"mediumforestgreenunwillinganglerfish",
+"rg":"embarrassedtanmetamorphosis",
 "":"",
 "":"",
 "":"",
@@ -255,9 +260,5 @@
 "":"",
 "":"",
 "":"",
-"":"",
-"":"",
-"":"",
-"":"",
-"":"",
+"":""
 }
