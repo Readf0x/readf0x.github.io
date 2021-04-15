@@ -1,6 +1,9 @@
 html {
   background-color: #1b1a1a;
 }
+.window {
+  display: none;
+}
 .popup {
   display: block;
   width: 573px;
