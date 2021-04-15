@@ -10,11 +10,36 @@
     <title>Home - readf0x Official</title>
   </head>
   <body>
+    <script>
+        //https://www.geeksforgeeks.org/how-to-load-css-files-using-javascript/
+        //https://stackoverflow.com/a/31217590
+
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+          console.log('mobile code works');
+          // Get HTML head element
+          var head = document.getElementsByTagName('HEAD')[0];
+
+          // Create new link Element
+          var link = document.createElement('link');
+
+          // set the attributes for link element
+          link.rel = 'stylesheet';
+
+          link.type = 'text/css';
+
+          link.href = 'style.css';
+
+          // Append link element to HTML head
+          head.appendChild(link);
+          //WOOOO horray for yoinking code that isn't yours 😉
+        }
+    </script>
     <style media="screen">
     /* If you can code, contact me on discord! readf0x#6685 */
     :root {
       --banner-font-size: 35px;
       --banner-height: 300px;
+      --test: #4d4e38;
     }
     .banner {
       background-image: url(https://readf0x.github.io/img/banner.jpg);
@@ -30,7 +55,7 @@
       margin: 0;
       padding-top: calc(calc(var(--banner-height) / 2) - var(--banner-font-size));
     }
-    @media only screen and (max-width: 380px) {
+    /* @media only screen and (max-width: 380px) {
       .banner {
         --banner-height: 150px;
         background-position: 0px -50px;
@@ -38,11 +63,7 @@
       .banner > h1 {
         --banner-font-size: 17.5px;
       }
-    }
-    body {
-      margin: 0 !important;
-      padding: 0 !important;
-    }
+    } */
     ul {
       margin: 0;
       padding: 0;
@@ -59,10 +80,23 @@
     nav {
       background: black;
     }
+    div.text-body {
+      width: 65%;
+      margin: auto;
+      /* background: var(--test); */
+    }
+    p {
+      font-family: "Segoe UI", monospace;
+    }
+    p.title {
+      font-size: 40px;
+      text-align: center;
+      font-family: "Droid Sans Mono Regular", monospace;
+    }
     </style>
     <nav class="navbar" style="border-bottom: 2px solid white;">
       <ul class="nav > ul">
-        <li><a href="/"><img src="img/logo.png" class="rfoff-logo"></a></li>
+        <li><a href="//readf0x.github.io/"><img src="img/logo.png" class="rfoff-logo"></a></li>
       </ul>
     </nav>
     <!-- <meta http-equiv="refresh" content="0; URL=//readf0x.github.io/503" /> -->
@@ -72,5 +106,9 @@
     <!-- <div class="game-holder" style="width: 640px; display: block; margin: auto;">
       <iframe src="games/REMBOUND-snake/index.html" width="640" height="480" class="game snake" style="border: none;"></iframe>
     </div> -->
+    <div class="text-body">
+      <p class="title">title</p>
+      <p>body text</p>
+    </div>
   </body>
 </html>

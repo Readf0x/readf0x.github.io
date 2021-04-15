@@ -12,6 +12,30 @@
     <title id="title">503 - readf0x Official</title>
   </head>
   <body>
+    <script>
+        //https://www.geeksforgeeks.org/how-to-load-css-files-using-javascript/
+        //https://stackoverflow.com/a/31217590
+
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+          console.log('mobile code works');
+          // Get HTML head element
+          var head = document.getElementsByTagName('HEAD')[0];
+
+          // Create new link Element
+          var link = document.createElement('link');
+
+          // set the attributes for link element
+          link.rel = 'stylesheet';
+
+          link.type = 'text/css';
+
+          link.href = 'mobile.css';
+
+          // Append link element to HTML head
+          head.appendChild(link);
+          //WOOOO horray for yoinking code that isn't yours 😉
+        }
+    </script>
     <div class="window">
       <nav class="blinds">
         <img src="https://readf0x.github.io/img/fav.png" class="app icon" height="16px" width="16px">
