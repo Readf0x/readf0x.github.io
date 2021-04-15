@@ -4,6 +4,10 @@ html {
 .window {
   display: none;
 }
+.popup-container {
+    zoom: 2;
+    -moz-transform: scale(2);
+}
 .popup {
   display: block;
   width: 573px;
