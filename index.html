@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <link rel="stylesheet" href="css/shared.css">
-    <link rel="stylesheet" href="individual.css">
+    <!-- <link rel="stylesheet" href="individual.css"> -->
     <link rel="stylesheet" href="fonts/Droid-Sans-Mono.css">
     <link rel="stylesheet" href="fonts/Segoe-UI.css">
     <meta charset="utf-8">
@@ -10,12 +10,64 @@
     <title>Home - readf0x Official</title>
   </head>
   <body>
+    <style media="screen">
+    /* If you can code, contact me on discord! readf0x#6685 */
+    :root {
+      --banner-font-size: 35px;
+      --banner-height: 300px;
+    }
+    .banner {
+      background-image: url(https://readf0x.github.io/img/banner.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 0px -100px;
+      height: var(--banner-height);
+    }
+    .banner > h1 {
+      font-family: "Droid Sans Mono Regular", monospace;
+      font-size: var(--banner-font-size);
+      text-align: center;
+      margin: 0;
+      padding-top: calc(calc(var(--banner-height) / 2) - var(--banner-font-size));
+    }
+    @media only screen and (max-width: 380px) {
+      .banner {
+        --banner-height: 150px;
+        background-position: 0px -50px;
+      }
+      .banner > h1 {
+        --banner-font-size: 17.5px;
+      }
+    }
+    body {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      list-style-type: none;
+      height: 58px;
+    }
+    li > img {
+      height: 50px;
+      padding-top: 4px;
+      padding-bottom: 4px;
+    }
+    </style>
+    <nav>
+      <ul>
+        <li><img src="img/logo.png" class="rfoff-logo"></li>
+      </ul>
+    </nav>
     <meta http-equiv="refresh" content="0; URL=//readf0x.github.io/503" />
     <div class="banner">
       <h1>readf0x Official</h1>
     </div>
-    <div class="game-holder" style="width: 640px; display: block; margin: auto;">
+    <!-- <div class="game-holder" style="width: 640px; display: block; margin: auto;">
       <iframe src="games/REMBOUND-snake/index.html" width="640" height="480" class="game snake" style="border: none;"></iframe>
-    </div>
+    </div> -->
   </body>
 </html>
