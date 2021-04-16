@@ -1,3 +1,6 @@
+@import "../fonts/Product-Sans-Regular.css";
+@import "../fonts/Droid-Sans-Mono.css";
+@import "../fonts/Segoe-UI.css";
 html {
   background-color: #201f1e;
   color: #fefefe;
@@ -5,4 +8,31 @@ html {
 body {
   margin: 0 !important;
   padding: 0 !important;
+}
+a:link, a:visited, a:active {
+  color: #892156;
+}
+a:hover {
+  color: #c12e79;
+}
+::-moz-selection {
+  color: #fff;
+  background: #fff;
+}
+::selection {
+  color: #201f1e;
+  background: #fefefe;
+}
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #2d2c2a;
+}
+::-webkit-scrollbar-thumb {
+  background: #fefefe;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

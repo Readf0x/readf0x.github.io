@@ -1,17 +1,109 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <link rel="stylesheet" href="https://readf0x.github.io/css/shared.css">
+    <link rel="stylesheet" href="../css/shared.css">
     <link rel="stylesheet" href="mobile.css">
-    <link rel="stylesheet" href="desktop.css">
-    <link rel="stylesheet" href="https://readf0x.github.io/fonts/Droid-Sans-Mono.css">
-    <link rel="stylesheet" href="https://readf0x.github.io/fonts/Segoe-UI.css">
-    <link rel="stylesheet" href="https://readf0x.github.io/fonts/Product-Sans-Regular.css">
+    <!-- <link rel="stylesheet" href="desktop.css"> -->
     <meta charset="utf-8">
-    <link rel="shortcut icon" href="https://readf0x.github.io/img/fav.png">
+    <link rel="shortcut icon" href="../img/fav.png">
     <title id="title">503 - readf0x Official</title>
   </head>
   <body>
+    <style media="screen">
+    html {
+      background-color: #1b1a1a;
+    }
+    .popup {
+      display: none;
+    }
+    /* @media screen and (max-width: 800px) {
+      .window {
+        display: none !important;
+      }
+      .popup {
+        display: block !important;
+      }
+      a:link, a:visited, a:active {
+        color: #aecbfa !important;
+        text-decoration: none;
+      }
+      a:hover {
+        color: #aecbfa !important;
+        text-decoration: none;
+      }
+    } */
+    .window {
+      font-family: "Droid Sans Mono Regular", monospace;
+      display: block;
+      width: 500px;
+      height: 300px;
+      margin: auto;
+      box-shadow: 0px 0px 5px #111;
+      border: 1px solid black;
+      background-color: #201f1e;
+      z-index: 9;
+    }
+    .padding {
+      padding: 10px;
+      padding-top: 0px;
+    }
+    .blinds {
+      margin: 0;
+      padding: 0;
+      height: 32px;
+      background-color: black;
+      z-index: 10;
+    }
+    .icon {
+      display: inline;
+      float: right;
+      border-top: 11px solid black;
+      border-bottom: 11px solid black;
+      border-left: 18px solid black;
+      border-right: 18px solid black;
+      -webkit-user-select: none; /* Safari */
+      -ms-user-select: none; /* IE 10 and IE 11 */
+      user-select: none; /* Standard syntax */
+    }
+    .app.icon {
+      float: left;
+      border-top: 8px solid black;
+      border-bottom: 8px solid black;
+      border-left: 8px solid black;
+      border-right: 8px solid black;
+    }
+    .title {
+      /*display: none;*/
+      margin: 0;
+      padding-top: 8px;
+      font-size: 12px;
+      display: inline-block;
+      font-family: "Segoe UI", monospace;
+    }
+    .close:hover {
+      background-color: #e81123;
+      border-color: #e81123;
+    }
+    .max:hover, .mini:hover {
+      background-color: #1a1a1a;
+      border-color: #1a1a1a;
+    }
+    a:link, a:visited, a:active {
+      color: #892156;
+    }
+    a:hover {
+      color: #c12e79;
+    }
+    ::-moz-selection {
+      color: #fff;
+      background: #fff;
+    }
+    ::selection {
+      color: #201f1e;
+      background: #fefefe;
+    }
+
+    </style>
     <script>
         //https://www.geeksforgeeks.org/how-to-load-css-files-using-javascript/
         //https://stackoverflow.com/a/31217590
@@ -35,9 +127,52 @@
           head.appendChild(link);
           //WOOOO horray for yoinking code that isn't yours 😉
         }
+        // // Make the DIV element draggable:
+        // dragElement(document.getElementById("mydiv"));
+        //
+        // function dragElement(elmnt) {
+        //   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        //   if (document.getElementById(elmnt.id + "header")) {
+        //     // if present, the header is where you move the DIV from:
+        //     document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+        //   } else {
+        //     // otherwise, move the DIV from anywhere inside the DIV:
+        //     elmnt.onmousedown = dragMouseDown;
+        //   }
+        //
+        //   function dragMouseDown(e) {
+        //     e = e || window.event;
+        //     e.preventDefault();
+        //     // get the mouse cursor position at startup:
+        //     pos3 = e.clientX;
+        //     pos4 = e.clientY;
+        //     document.onmouseup = closeDragElement;
+        //     // call a function whenever the cursor moves:
+        //     document.onmousemove = elementDrag;
+        //   }
+        //
+        //   function elementDrag(e) {
+        //     e = e || window.event;
+        //     e.preventDefault();
+        //     // calculate the new cursor position:
+        //     pos1 = pos3 - e.clientX;
+        //     pos2 = pos4 - e.clientY;
+        //     pos3 = e.clientX;
+        //     pos4 = e.clientY;
+        //     // set the element's new position:
+        //     elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+        //     elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+        //   }
+        //
+        //   function closeDragElement() {
+        //     // stop moving when mouse button is released:
+        //     document.onmouseup = null;
+        //     document.onmousemove = null;
+        //   }
+        // }
     </script>
-    <div class="window">
-      <nav class="blinds">
+    <div class="window" id="mydiv">
+      <nav class="blinds" id="mydivheader">
         <img src="https://readf0x.github.io/img/fav.png" class="app icon" height="16px" width="16px">
         <p class="title">503 - readf0x Official</p>
         <img src="https://readf0x.github.io/img/close_icon.png" class="icon close">
