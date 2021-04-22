@@ -1,23 +1,27 @@
-/*If you can code, contact me on discord! readf0x#6685*/
+/* If you can code, contact me on discord! readf0x#6685 */
 :root {
-  --banner-font-size: 35px;
-  --banner-height: 300px;
+  --test: #4d4e38;
+}
+body {
+  margin: 0 !important;
+  padding: 0 !important;
 }
 .banner {
   background-image: url(https://readf0x.github.io/img/banner.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0px -100px;
-  height: var(--banner-height);
+  height: 300px;
 }
 .banner > h1 {
   font-family: "Droid Sans Mono Regular", monospace;
-  font-size: var(--banner-font-size);
+  font-size: 35px;
   text-align: center;
   margin: 0;
-  padding-top: calc(calc(var(--banner-height) / 2) - var(--banner-font-size));
+  padding-top: 115px;
 }
-@media only screen and (max-width: 380px) {
+/* shitty mobile code that doesn't fucking work anymore */
+/* @media only screen and (max-width: 380px) {
   .banner {
     --banner-height: 150px;
     background-position: 0px -50px;
@@ -25,8 +29,33 @@
   .banner > h1 {
     --banner-font-size: 17.5px;
   }
+} */
+ul {
+  margin: 0;
+  padding: 0;
 }
-body {
-  margin: 0 !important;
-  padding: 0 !important;
+li {
+  list-style-type: none;
+  height: 58px;
+}
+li > a > img {
+  height: 50px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+nav {
+  background: black;
+}
+div.text-body {
+  width: 65%;
+  margin: auto;
+  /* background: var(--test); */
+}
+p {
+  font-family: "Segoe UI", monospace;
+}
+p.title {
+  font-size: 40px;
+  text-align: center;
+  font-family: "Droid Sans Mono Regular", monospace;
 }
