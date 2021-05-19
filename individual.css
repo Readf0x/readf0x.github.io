@@ -7,10 +7,9 @@ body {
   padding: 0 !important;
 }
 .banner {
-  background-image: url(https://readf0x.github.io/img/banner.jpg);
+  background-image: url(https://readf0x.github.io/img/wallpaper.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 0px -100px;
   height: 300px;
 }
 .banner > h1 {

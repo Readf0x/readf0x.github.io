@@ -13,7 +13,8 @@ a:link, a:visited, a:active {
   color: #892156;
 }
 a:hover {
-  color: #c12e79;
+  color: #bf0000;
+  cursor: pointer;
 }
 ::-moz-selection {
   color: #fff;
@@ -57,7 +58,7 @@ div.text-body {
   margin: auto;
   /* background: var(--test); */
 }
-p {
+p, a {
   font-family: "Segoe UI", monospace;
 }
 p.title {
