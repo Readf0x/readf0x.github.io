@@ -10,12 +10,12 @@ body {
   padding: 0 !important;
 }
 ::-moz-selection {
-  color: #fff;
-  background: #fff;
+  color: #201f1e00;
+  background: #fefefe00;
 }
 ::selection {
-  color: #201f1e;
-  background: #fefefe;
+  color: #201f1eff;
+  background: #fefefeff;
 }
 a:link, a:visited, a:active {
   color: #892156;
