@@ -9,13 +9,6 @@ body {
   margin: 0 !important;
   padding: 0 !important;
 }
-a:link, a:visited, a:active {
-  color: #892156;
-}
-a:hover {
-  color: #bf0000;
-  cursor: pointer;
-}
 ::-moz-selection {
   color: #fff;
   background: #fff;
@@ -23,6 +16,13 @@ a:hover {
 ::selection {
   color: #201f1e;
   background: #fefefe;
+}
+a:link, a:visited, a:active {
+  color: #892156;
+}
+a:hover {
+  color: #bf0000;
+  cursor: pointer;
 }
 ::-webkit-scrollbar {
   width: 8px;
