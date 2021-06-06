@@ -45,7 +45,7 @@ li {
   list-style-type: none;
   height: 58px;
 }
-li > a > img {
+img.rfoff-logo {
   height: 50px;
   padding-top: 4px;
   padding-bottom: 4px;
