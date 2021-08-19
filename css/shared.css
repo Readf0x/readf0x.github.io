@@ -44,6 +44,7 @@ ul {
 li {
   list-style-type: none;
   height: 58px;
+  display: inline;
 }
 div.footer-container {
   background: black;
@@ -72,6 +73,9 @@ img.rfoff-logo {
 }
 nav {
   background: black;
+}
+.navbar-item {
+  
 }
 div.text-body {
   width: 65%;
