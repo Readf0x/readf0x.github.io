@@ -1,0 +1,42 @@
+/* help */
+html {
+  background-color: #1b1a1a;
+}
+.window {
+  display: none;
+}
+.popup-container {
+    zoom: 1.7;
+    -moz-transform: scale(2);
+}
+.popup {
+  display: block;
+  width: 573px;
+  height: 306px;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: #3c4043;
+  border-radius: 20px;
+  font-family: "Product Sans";
+  color: #fff;
+}
+.icon-mobile {
+  width: 35px;
+  height: 35px;
+  display: block;
+  margin: auto;
+  padding-top: 35px;
+}
+h1.mobile-header {
+  text-align: center;
+  margin-top: 39px;
+  margin-bottom: 39px;
+}
+p.mobile-desc {
+  width: 400px;
+  margin: auto;
+}
