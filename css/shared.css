@@ -75,7 +75,8 @@ nav {
   background: black;
 }
 .navbar-item {
-  
+  width: min-content;
+  margin: auto;
 }
 div.text-body {
   width: 65%;
