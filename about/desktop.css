@@ -1,0 +1,92 @@
+html {
+  background-color: #1b1a1a;
+}
+.popup {
+  display: none;
+}
+/* @media screen and (max-width: 800px) {
+  .window {
+    display: none !important;
+  }
+  .popup {
+    display: block !important;
+  }
+  a:link, a:visited, a:active {
+    color: #aecbfa !important;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #aecbfa !important;
+    text-decoration: none;
+  }
+} */
+.window {
+  font-family: "Droid Sans Mono Regular", monospace;
+  display: block;
+  width: 500px;
+  height: 300px;
+  margin: auto;
+  box-shadow: 0px 0px 5px #111;
+  border: 1px solid black;
+  background-color: #201f1e;
+  z-index: 9;
+}
+.padding {
+  padding: 10px;
+  padding-top: 0px;
+}
+.blinds {
+  margin: 0;
+  padding: 0;
+  height: 32px;
+  background-color: black;
+  z-index: 10;
+}
+.icon {
+  display: inline;
+  float: right;
+  border-top: 11px solid black;
+  border-bottom: 11px solid black;
+  border-left: 18px solid black;
+  border-right: 18px solid black;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+.app.icon {
+  float: left;
+  border-top: 8px solid black;
+  border-bottom: 8px solid black;
+  border-left: 8px solid black;
+  border-right: 8px solid black;
+}
+.503-title {
+  /*display: none;*/
+  margin: 0;
+  padding-top: 8px;
+  font-size: 12px;
+  display: inline-block;
+  font-family: "Segoe UI", monospace;
+}
+.close:hover {
+  background-color: #e81123;
+  border-color: #e81123;
+}
+.max:hover, .mini:hover {
+  background-color: #1a1a1a;
+  border-color: #1a1a1a;
+}
+a:link, a:visited, a:active {
+  color: #892156;
+}
+a:hover {
+  color: #c12e79;
+}
+::-moz-selection {
+  color: #fff;
+  background: #fff;
+}
+::selection {
+  color: #201f1e;
+  background: #fefefe;
+}

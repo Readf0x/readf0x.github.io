@@ -44,6 +44,27 @@ ul {
 li {
   list-style-type: none;
   height: 58px;
+  display: inline;
+}
+div.footer-container {
+  background: black;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+ul.footer-ul {
+  margin: 0;
+  padding: 0;
+}
+li.footer-li {
+  height: initial;
+  display: inline;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-family: "Segoe UI", monospace;
+}
+.right {
+  float: right;
 }
 div.footer-container {
   background: black;
@@ -72,6 +93,9 @@ img.rfoff-logo {
 }
 nav {
   background: black;
+}
+.navbar-item {
+  
 }
 div.text-body {
   width: 65%;
