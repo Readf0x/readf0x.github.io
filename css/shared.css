@@ -69,8 +69,8 @@ li.footer-li {
 div.footer-container {
   background: black;
   width: 100%;
-  position: absolute;
-  bottom: 0;
+  position: relative;
+  bottom: 4px;
 }
 ul.footer-ul {
   margin: 0;
@@ -94,8 +94,11 @@ img.rfoff-logo {
 nav {
   background: black;
 }
-.navbar-item {
-  
+.nava {
+  position: absolute;
+  font-family: "Droid Sans Mono Regular", monospace;
+  font-size: 24px;
+  padding: 15px;
 }
 div.text-body {
   width: 65%;
@@ -109,6 +112,9 @@ p.title {
   font-size: 40px;
   text-align: center;
   font-family: "Droid Sans Mono Regular", monospace;
+}
+.lnspace {
+  padding-top: 96px;
 }
 a.503-li {
   height: default;
