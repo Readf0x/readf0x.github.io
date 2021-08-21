@@ -1,7 +1,7 @@
 /* If you can code, contact me on discord! readf0x#6685 */
 .software-dwnldbtn {
     font-size: 20px;
-    padding: 49.5px;
+    padding: 50px;
     padding-top: 25px;
     padding-bottom: 28px;
     width: 75px;
@@ -10,7 +10,7 @@
 .torbutton {
     background: url(../img/torbutton.png/);
     background-position: right;
-    background-size: 222px;
+    background-size: cover;
 }
 /*debugging*/
 /*html {
