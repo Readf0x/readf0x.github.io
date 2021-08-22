@@ -69,8 +69,8 @@ li.footer-li {
 div.footer-container {
   background: black;
   width: 100%;
-  position: relative;
-  bottom: 4px;
+  position: fixed;
+  bottom: 0;
 }
 ul.footer-ul {
   margin: 0;
