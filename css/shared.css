@@ -99,6 +99,10 @@ nav {
   font-family: "Droid Sans Mono Regular", monospace;
   font-size: 24px;
   padding: 15px;
+  text-decoration: none;
+}
+.nava:hover {
+  color: #bf0000;
 }
 div.text-body {
   width: 65%;
