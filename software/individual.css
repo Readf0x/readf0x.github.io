@@ -8,14 +8,18 @@
     text-decoration: none;
 }
 .torbutton {
-    background: url(../img/torbutton.png/);
+    background: url(https://i.imgur.com/v5vausn.png);
+    /*background: url(//readf0x.github.io/img/torbutton.png/);*/
+    /*background: url(../img/torbutton.png/);*/
     background-position: right;
     background-size: cover;
     background-repeat: no-repeat;
     color: #fbfbfb !important;
 }
 .discordbutton {
-    background: url(../img/discordbutton.png/);
+    background: url(https://i.imgur.com/f03nGlj.png);
+    /*background: url(//readf0x.github.io/img/discordbutton.png/);*/
+    /*background: url(../img/discordbutton.png/);*/
     background-position: right;
     background-size: cover;
     background-repeat: no-repeat;

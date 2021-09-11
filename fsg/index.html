@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="../css/shared.css">
+    <link rel="stylesheet" href="individual.css">
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="//readf0x.github.io/img/fav.png">
+    <title>FSG - readf0x Official</title>
+    <meta content="readf0x Official" property="og:title">
+    <meta content="the official readf0x website!" property="og:description">
+    <meta content="https://readf0x.github.io" property="og:url">
+    <meta content="https://readf0x.github.io/img/logo.png" property="og:image">
+    <meta content="#bf0000" data-react-helmet="true" name="theme-color">
+  </head>
+  <body style="margin: 0 !important; padding: 0 !important;">
+    <!-- <meta http-equiv="refresh" content="0; URL=//readf0x.github.io/503" /> -->
+    <script>
+        //https://www.geeksforgeeks.org/how-to-load-css-files-using-javascript/
+        //https://stackoverflow.com/a/31217590
+
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+          console.log('mobile code works');
+          // Get HTML head element
+          var head = document.getElementsByTagName('HEAD')[0];
+
+          // Create new link Element
+          var link = document.createElement('link');
+
+          // set the attributes for link element
+          link.rel = 'stylesheet';
+
+          link.type = 'text/css';
+
+          link.href = 'style.css';
+
+          // Append link element to HTML head
+          head.appendChild(link);
+          //WOOOO horray for yoinking code that isn't yours 😉
+        }
+    </script>
+    <nav class="navbar" style="border-bottom: 2px solid #fefefe;">
+      <ul class="nav > ul">
+        <li>
+          <a href="//readf0x.github.io/">
+            <img src="../img/logo.png" class="rfoff-logo">
+          </a>
+        </li>
+        <li class="navbar-item">
+          <a href="//readf0x.github.io/software/" class="nava">Downloads</a>
+        </li>
+        <li class="navbar-item">
+          <a href="//readf0x.github.io/fsg" class="nava" style="margin-left: 159.63px;">F.S.G.</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="text-body">
+      <p class="title">Fox Services Group</p>
+      <p>We are a manual work organization. Our job is to do tedious work that would otherwise take you hours. We'll do just about anything (legal) for the right price. You can contact us anytime at <a href="mailto:readf0x@dublea.me">readf0x@dublea.me</a> or <a href="mailto:kaidenarri17@gmail.com">kaidenarri17@gmail.com</a>. We hope to see you soon!</p>
+      <p><b>DISCLAIMER:</b> We will not accept all jobs. Depending on the worksite and time personal transit may be required. Transit costs will not be reducted from final price.</p>
+    </div>
+    <div class="footer-container">
+      <ul class="footer-ul">
+        <li class="footer-li"><a href="//readf0x.github.io/about/">About</a></li>
+        <li class="footer-li"><a href="mailto:readf0x@dublea.me">Contact</a></li>
+        <li class="footer-li"><a href="https://discord.gg/p7ewtPU/">Discord</a></li>
+        <li class="footer-li right"><a href="//torproject.org/">Tor Project</a></li>
+      </ul>
+    </div>
+  </body>
+</html>
