@@ -107,6 +107,7 @@ nav {
 div.text-body {
   width: 65%;
   margin: auto;
+  padding-bottom: 35px;
   /* background: var(--test); */
 }
 p, a {

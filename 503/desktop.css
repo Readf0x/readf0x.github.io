@@ -60,14 +60,14 @@ html {
   border-left: 8px solid black;
   border-right: 8px solid black;
 }
-.503-title {
-  /*display: none;*/
+/* .503-title {
+  /*display: none;*
   margin: 0;
   padding-top: 8px;
   font-size: 12px;
   display: inline-block;
   font-family: "Segoe UI", monospace;
-}
+} */
 .close:hover {
   background-color: #e81123;
   border-color: #e81123;
