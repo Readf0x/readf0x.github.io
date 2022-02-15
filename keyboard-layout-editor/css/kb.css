@@ -108,7 +108,7 @@ html, body {
 .keylabel1>div, .keylabel4>div, .keylabel7>div, .keylabel10>div { text-align: center; }
 .keylabel2>div, .keylabel5>div, .keylabel8>div, .keylabel11>div { text-align: right; }
 /* Label Sizes */
-for i in (1..9) {
+for i in (1..9) /*bro actually wtf is this???*/ {
   .keylabel.textsize{i} {
     font-size: (6+2*i)px;
     line-height: 1em;
