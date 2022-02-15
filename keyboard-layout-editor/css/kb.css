@@ -451,3 +451,7 @@ settings-key(size, adjust = 0) {
     float: none;
   }
 }
+
+/* Fix broken icons */
+.kb {font-family: kbd-webfont;}
+.fa {font-family: FontAwesome;}
