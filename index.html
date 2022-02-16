@@ -19,23 +19,12 @@
         //https://stackoverflow.com/a/31217590
 
         if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-          console.log('mobile code works');
-          // Get HTML head element
           var head = document.getElementsByTagName('HEAD')[0];
-
-          // Create new link Element
           var link = document.createElement('link');
-
-          // set the attributes for link element
           link.rel = 'stylesheet';
-
           link.type = 'text/css';
-
-          link.href = 'style.css';
-
-          // Append link element to HTML head
+          link.href = 'mobile.css';
           head.appendChild(link);
-          //WOOOO horray for yoinking code that isn't yours 😉
         }
     </script> -->
     <nav class="navbar" style="border-bottom: 2px solid #fefefe;">
