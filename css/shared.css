@@ -124,3 +124,9 @@ p.title {
 a.503-li {
   height: default;
 }
+.github-ico:after {
+  background: url("https://github.githubassets.com/pinned-octocat.svg"), no-repeat, center, 1em;
+  content: "";
+  display: inline-block;
+  width: 1em; height: 1em;
+}
