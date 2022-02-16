@@ -118,15 +118,35 @@ p.title {
   text-align: center;
   font-family: "Droid Sans Mono Regular", monospace;
 }
-.text-body p:nth-child(n-1) {
+.text-body p:nth-child(2n+1) {
   padding-top: 96px;
 }
 a.503-li {
   height: default;
 }
 .github-ico:after {
-  background: url("https://github.githubassets.com/pinned-octocat.svg"), no-repeat, center, 1em;
+  background: url("https://github.githubassets.com/pinned-octocat.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1em;
   content: "";
   display: inline-block;
   width: 1em; height: 1em;
+}body {
+  margin: 0 !important;
+  padding: 0 !important;
 }
+.banner {
+  background-image: url(https://readf0x.github.io/img/wallpaper.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
+}
+.banner > h1 {
+  font-family: "Droid Sans Mono Regular", monospace;
+  font-size: 35px;
+  text-align: center;
+  margin: 0;
+  padding-top: 115px;
+}
+
