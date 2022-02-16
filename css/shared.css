@@ -118,7 +118,7 @@ p.title {
   text-align: center;
   font-family: "Droid Sans Mono Regular", monospace;
 }
-.lnspace {
+.text-body p:nth-child(n-1) {
   padding-top: 96px;
 }
 a.503-li {
