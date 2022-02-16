@@ -1,0 +1,9 @@
+.rfoff-logo:after {
+    background: url("../img/logo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1em;
+    content: "";
+    display: inline-block;
+    width: 1em; height: 1em;
+}
