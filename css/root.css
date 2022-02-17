@@ -126,6 +126,7 @@ a.503-li {
 }
 .github-ico:after {
   background: url("https://github.githubassets.com/pinned-octocat.svg");
+  color: #fefefe;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 1em;
