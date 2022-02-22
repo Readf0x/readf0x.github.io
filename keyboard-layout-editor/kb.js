@@ -659,15 +659,15 @@
 			] }
 		];
 		$scope.samples = {
-			"Apple Wireless" : "/samples/apple-wireless.json",
-			"GB: CCnG" : "/samples/gb-ccng.json",
-			"GB: Retro DSA" : "/samples/gb-retro-dsa.json",
-			"Stealth Black" : "/samples/stealth-black.json",
-			"Televideo TS-800a" : "/samples/televideo-ts-800a.json",
-			"Symbolics PN 364000" : "/samples/symbolics-364000.json",
-			"Symbolics SpaceCadet" : "/samples/symbolics-spacecadet.json",
-			"Commodore VIC-20" : "/samples/commodore-vic20.json",
-			"Programmer's Keyboard": "/samples/pkb.json"
+			"Apple Wireless" : "samples/apple-wireless.json",
+			"GB: CCnG" : "samples/gb-ccng.json",
+			"GB: Retro DSA" : "samples/gb-retro-dsa.json",
+			"Stealth Black" : "samples/stealth-black.json",
+			"Televideo TS-800a" : "samples/televideo-ts-800a.json",
+			"Symbolics PN 364000" : "samples/symbolics-364000.json",
+			"Symbolics SpaceCadet" : "samples/symbolics-spacecadet.json",
+			"Commodore VIC-20" : "samples/commodore-vic20.json",
+			"Programmer's Keyboard": "samples/pkb.json"
 			};
 		// $http.get('layouts.json').success(function(data) {
 			// $scope.layouts = data.presets;
