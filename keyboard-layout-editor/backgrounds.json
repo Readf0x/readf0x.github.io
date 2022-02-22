@@ -4,7 +4,7 @@
     "content" : [
       { "name": "Test 1", "style" : "background-color: #0f0;" },
       { "name": "Test 2", "style" : "background-color: #00f;" },
-      { "name": "Test 3", "style" : "background-color: #f0              f;" }
+      { "name": "Test 3", "style" : "background-color: #f0f;" }
     ]
   }
 ]
