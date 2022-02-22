@@ -18,7 +18,8 @@ var $renderKey = (typeof(exports) !== 'undefined') ? exports : {};
 			"DSA" : { profile: "DSA", keySpacing: 0, bevelMargin: 6, bevelOffsetTop: 0, bevelOffsetBottom: 0, padding: 3, roundOuter: 5, roundInner: 8 },
 			"SA" :  { profile: "SA", keySpacing: 0, bevelMargin: 6, bevelOffsetTop: 2, bevelOffsetBottom: 2, padding: 3, roundOuter: 5, roundInner: 5 },
 			"CHICKLET" :  { profile: "CHICKLET", keySpacing: 3, bevelMargin: 1, bevelOffsetTop: 0, bevelOffsetBottom: 2, padding: 4, roundOuter: 4, roundInner: 4 },
-			"FLAT" : { profile: "FLAT" , keySpacing: 1, bevelMargin: 1, bevelOffsetTop: 0, bevelOffsetBottom: 0, padding: 4, roundOuter: 5, roundInner: 3 }
+			"FLAT" : { profile: "FLAT" , keySpacing: 1, bevelMargin: 1, bevelOffsetTop: 0, bevelOffsetBottom: 0, padding: 4, roundOuter: 5, roundInner: 3 },
+			"TW" : { profile: "TW" , keySpacing: 1, bevelMargin: 1, bevelOffsetTop: 0, bevelOffsetBottom: 0, padding: 4, roundOuter: 10, roundInner: 10 }
 		},
 		mm : {
 			unit: 19.05,
@@ -29,10 +30,11 @@ var $renderKey = (typeof(exports) !== 'undefined') ? exports : {};
 			"SA" : {  profile: "SA", keySpacing: 0.4445, bevelMargin: 3.1115, padding: 0, roundOuter: 1.0, roundInner: 2.0 },
 			"CHICKLET" : {  profile: "CHICKLET", keySpacing: 0.4445, bevelMargin: 3.1115, padding: 0, roundOuter: 1.0, roundInner: 2.0 },
 			"FLAT" : {  profile: "FLAT" , keySpacing: 0.4445, bevelMargin: 3.1115, padding: 0, roundOuter: 1.0, roundInner: 2.0 },
+			"TW" : {  profile: "TW" , keySpacing: 0.4445, bevelMargin: 3.1115, padding: 0, roundOuter: 1.0, roundInner: 2.0 }
 		}
 	};
 	["px","mm"].forEach(function(unit) {
-		["","DCS","DSA","SA","CHICKLET","FLAT"].forEach(function(profile) {
+		["","DCS","DSA","SA","CHICKLET","FLAT","TW"].forEach(function(profile) {
 			unitSizes[unit][profile].unit = unitSizes[unit].unit;
 			unitSizes[unit][profile].strokeWidth = unitSizes[unit].strokeWidth;
 		});
@@ -47,7 +49,7 @@ var $renderKey = (typeof(exports) !== 'undefined') ? exports : {};
 	}
 
 	function getProfile(key) {
-		return (/\b(SA|DSA|DCS|OEM|CHICKLET|FLAT)\b/.exec(key.profile) || [""])[0];
+		return (/\b(SA|DSA|DCS|OEM|CHICKLET|FLAT|TW)\b/.exec(key.profile) || [""])[0];
 	}
 
 	function getRenderParms(key, sizes) {

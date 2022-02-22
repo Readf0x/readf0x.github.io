@@ -158,12 +158,15 @@ for i in (1..9) /*bro actually wtf is this???*/ {
 }
 .DSA.HOMING .keylabels, .SA.HOMING .keylabels { background-image: none; }
 
-.FLAT .keytop {
+.FLAT .keytop, .TW .keytop {
   display: none;
 }
 .CHICKLET .keylabel9, .CHICKLET .keylabel10, .CHICKLET .keylabel11,
-.FLAT .keylabel9, .FLAT .keylabel10, .FLAT .keylabel11 {
+.FLAT .keylabel9, .FLAT .keylabel10, .FLAT .keylabel11, .TW .keylabel9 .keylabel10 .keylabel11 {
   display: none;
+}
+.TW {
+  border-radius: 1rem;
 }
 
 /* color swatches */
