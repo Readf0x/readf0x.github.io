@@ -848,6 +848,7 @@
 			loadAndRender($location.path());
 		} else {
 			// Some simple default content... just a numpad
+			// Now with colors and alternating profiles too Ian!
 			$scope.deserializeAndRender([
 				["Num Lock","/","*","-",
 					{x:0.25,f:4,w:14,h:5,d:true},"<h5><b>Getting Started with Keyboard-layout-editor</b></h5>"+
@@ -860,10 +861,10 @@
 					"<li>There are a lot of available keyboard shortcuts; press '?' or 'F1' to see a list.</li></ul>"+
 					"<p>When you're ready to save your layout, go to the Raw Data tab and click the 'Download JSON' button.</p>"+
 					"<p>All credit and rights to keyboard-layout-editor.com go to <a href='https://github.com/ijprest'>Ian Prest</a> for making the original KLE. This is simply a passion project I'm working on because I enjoyed playing around with his site so much.</p>"],
-				[{f:3},"7\nHome","8\n↑","9\nPgUp",{h:2},"+"],
-				["4\n←","5","6\n→"],
-				["1\nEnd","2\n↓","3\nPgDn",{h:2},"Enter"],
-				[{w:2},"0\nIns",".\nDel"]
+				[{c:"#5d437e",p:"DSA",f:3},"7\nHome",{c:"#ebd400",p:"CHICKLET"},"8\n↑",{c:"#00773a",p:""},"9\nPgUp",{c:"#bc251e",p:"DSA",h:2},"+"],
+				[{c:"#00773a",p:"FLAT"},"4\n←",{c:"#bc251e"},"5",{c:"#00589f",p:"CHICKLET"},"6\n→"],
+				[{p:""},"1\nEnd",{c:"#cb3d6e",p:"SA"},"2\n↓",{c:"#5d437e"},"3\nPgDn",{c:"#00589f",p:"OEM",h:2},"Enter\n\n\n\n\n\n\n\n\n;)"],
+				[{c:"#cb3d6e",p:"SA",w:2},"0\nIns",{c:"#00773a",p:"CHICKLET"},".\nDel"]
 			]);
 		}
 
