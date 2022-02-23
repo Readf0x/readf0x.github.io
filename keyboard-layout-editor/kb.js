@@ -850,8 +850,8 @@
 			// Some simple default content... just a numpad
 			$scope.deserializeAndRender([
 				["Num Lock","/","*","-",
-					{x:0.25,f:4,w:14,h:5,d:true},"<h5><b>Getting Started with Keyboard Layout Editor</b></h5>"+
-					"<p>Keyboard-layout-editor.com is a web application that enables the editing of keyboard-layouts, i.e., the position and appearance of each physical key.</p>"+
+					{x:0.25,f:4,w:14,h:5,d:true},"<h5><b>Getting Started with Keyboard-layout-editor</b></h5>"+
+					"<p>Keyboard-layout-editor is a web application that enables the editing of keyboard-layouts, i.e., the position and appearance of each physical key.</p>"+
 					"<p>Start by exploring the presets and samples from the menu-bar to give you an idea of the possibilities.  Once you are ready to start designing your own keyboard, just load one of the presets and start customizing it!  Some tips:</p>"+
 					"<ul><li>The selected keys can be modified on the <i>Properties</i> tab.</li>"+
 					"<li>The <i>Keyboard Properties</i> tab lets you edit the keyboard background and keyboard metadata.</li>"+
