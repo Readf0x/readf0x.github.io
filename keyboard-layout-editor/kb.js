@@ -858,7 +858,7 @@
 					"<li>The <i>Custom Styles</i> tab lets you write advanced CSS styling rules.</li>"+
 					"<li>Don't forget the <i>Color Swatches</i> and <i>Character Picker</i> menu items!  These give you easy access to colors and symbol characters, respectively.</li>"+
 					"<li>There are a lot of available keyboard shortcuts; press '?' or 'F1' to see a list.</li></ul>"+
-					"<p>When you're ready to save your layout, <s>simply 'Sign In' with your <a href='https://www.github.com'>GitHub</a> account and click the <i>Save</i> button.  Your layout will be saved in a GitHub Gist.</s>Go to the <a ng-class='{active:selTab==2}'>Raw Data tab</a> and click the 'Download JSON' button.</p>"+
+					"<p>When you're ready to save your layout, <s>simply 'Sign In' with your <a href='https://www.github.com'>GitHub</a> account and click the <i>Save</i> button.  Your layout will be saved in a GitHub Gist.</s>Go to the Raw Data tab and click the 'Download JSON' button.</p>"+
 					"<p>Have fun!</p>"],
 				[{f:3},"7\nHome","8\n↑","9\nPgUp",{h:2},"+"],
 				["4\n←","5","6\n→"],
