@@ -2,8 +2,10 @@
     background: url("../img/fav.png");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 1em;
+    background-size: .73em;
     content: "";
     display: inline-block;
     width: 1em; height: 1em;
+    top: .145em;
+    position: relative;
 }
