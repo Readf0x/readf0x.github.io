@@ -848,7 +848,7 @@
 			loadAndRender($location.path());
 		} else {
 			// Some simple default content... just a numpad
-			// Now with colors and profiles too Ian!
+			// Not so simple anymore tho
 			$scope.deserializeAndRender([
 				[{c:"#ebd400",p:"FLAT",f:2},"\n\n\nNum Lock",{c:"#5d437e",p:"CHICKLET",f:6},"\n\n\n/",{c:"#bc251e",p:"OEM",a:5},"\n*",{c:"#ebd400",a:4,f:4},"\n\n-",
 					{x:0.25,f:4,w:14,h:5,d:true},"<h5><b>Getting Started with Keyboard-layout-editor</b></h5>"+
