@@ -19,7 +19,7 @@ var $renderKey = (typeof(exports) !== 'undefined') ? exports : {};
 			"SA" :  { profile: "SA", keySpacing: 0, bevelMargin: 6, bevelOffsetTop: 2, bevelOffsetBottom: 2, padding: 3, roundOuter: 5, roundInner: 5 },
 			"CHICKLET" :  { profile: "CHICKLET", keySpacing: 3, bevelMargin: 1, bevelOffsetTop: 0, bevelOffsetBottom: 2, padding: 4, roundOuter: 4, roundInner: 4 },
 			"FLAT" : { profile: "FLAT" , keySpacing: 1, bevelMargin: 1, bevelOffsetTop: 0, bevelOffsetBottom: 0, padding: 4, roundOuter: 5, roundInner: 3 },
-			"TW" : { profile: "TW" , keySpacing: 0, bevelMargin: 2, bevelOffsetTop: 3, bevelOffsetBottom: 2, padding: 8, roundOuter: 100, roundInner: 100 }
+			"TW" : { profile: "TW" , keySpacing: 0, bevelMargin: 2, bevelOffsetTop: 2, bevelOffsetBottom: 2, padding: 8, roundOuter: 100, roundInner: 100 }
 		},
 		mm : {
 			unit: 19.05,
