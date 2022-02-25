@@ -850,7 +850,7 @@
 			// Some simple default content... just a numpad
 			// Now with colors and profiles too Ian!
 			$scope.deserializeAndRender([
-				[{c:"#ebd400",p:"FLAT"},"Num Lock",{c:"#5d437e",p:"CHICKLET"},"/",{c:"#bc251e",p:"OEM"},"*",{c:"#ebd400"},"-",
+				[{c:"#ebd400",p:"FLAT",f:2},"\n\n\nNum Lock",{c:"#5d437e",p:"CHICKLET",f:6},"\n\n\n/",{c:"#bc251e",p:"OEM",a:5},"\n*",{c:"#ebd400",a:4,f:4},"\n\n-",
 					{x:0.25,f:4,w:14,h:5,d:true},"<h5><b>Getting Started with Keyboard-layout-editor</b></h5>"+
 					"<p>Keyboard-layout-editor is a web application that enables the editing of keyboard-layouts, i.e., the position and appearance of each physical key.</p>"+
 					"<p>Start by exploring the presets and samples from the menu-bar to give you an idea of the possibilities.  Once you are ready to start designing your own keyboard, just load one of the presets and start customizing it!  Some tips:</p>"+
@@ -861,10 +861,10 @@
 					"<li>There are a lot of available keyboard shortcuts; press '?' or 'F1' to see a list.</li></ul>"+
 					"<p>When you're ready to save your layout, go to the Raw Data tab and click the 'Download JSON' button.</p>"+
 					"<p>All credit and rights to keyboard-layout-editor.com go to <a href='https://github.com/ijprest'>Ian Prest</a> for making the original KLE. This is simply a passion project I'm working on because I enjoyed playing around with his site so much.</p>"],
-				[{c:"#5d437e",p:"DSA",f:3},"7\nHome",{c:"#ebd400",p:"CHICKLET"},"8\n↑",{c:"#00773a",p:""},"9\nPgUp",{c:"#bc251e",p:"DSA",h:2},"+"],
-				[{c:"#00773a",p:"FLAT"},"4\n←",{c:"#bc251e"},"5",{c:"#00589f",p:"CHICKLET"},"6\n→"],
-				[{p:""},"1\nEnd",{c:"#cb3d6e",p:"SA"},"2\n↓",{c:"#5d437e"},"3\nPgDn",{c:"#00589f",p:"OEM",h:2},"Enter\n\n\n\n\n\n\n\n\n;)"],
-				[{c:"#cb3d6e",p:"SA",w:2},"0\nIns",{c:"#00773a",p:"CHICKLET"},".\nDel"]
+					[{c:"#5d437e",p:"DSA",f:3},"7\nHome",{c:"#ebd400",p:"CHICKLET",f:4},"8\n↑",{c:"#00773a",f:2},"9\nPgUp",{c:"#bc251e",p:"DSA",a:6,f:6,h:2},"+"],
+					[{c:"#00773a",p:"FLAT",a:4,f:2},"\n\n4\n←",{c:"#bc251e",a:7,f:6},"5",{c:"#00589f",p:"CHICKLET",a:4,f:3},"6\n→"],
+					[{f:2},"1\nEnd",{c:"#cb3d6e",p:"SA",f:3},"2\n↓",{c:"#5d437e",a:5,f:6},"3\nPD",{c:"#00589f",p:"OEM",f:2,h:2},"Enter\n\n\n\n\n\n;)"],
+					[{c:"#cb3d6e",p:"SA",f:6,w:2},"0\nIns",{c:"#00773a",p:"CHICKLET",f:4},".\nDel"]
 			]);
 		}
 
