@@ -26,14 +26,14 @@
 			[{"w":1.25},"Ctrl",{"w":1.25},"Win",{"w":1.25},"Alt",{"w":6.25},"",{"w":1.25},"AltGr",{"w":1.25},"Win",{"w":1.25},"Menu",{"w":1.25},"Ctrl",{"x":0.25},"←","↓","→",{"x":0.25,"w":2},"0\nIns",".\nDel"]
 		] },
 		{ "name" : "Default 60%", "data" : [
-			["~\n`","!\n1","@\n2","#\n3","$\n4","%\n5","^\n6","&\n7","*\n8","(\n9",")\n0","_\n-","+\n=",{"w":2},"Backspace"],
+			["Esc","!\n1","@\n2","#\n3","$\n4","%\n5","^\n6","&\n7","*\n8","(\n9",")\n0","_\n-","+\n=",{"w":2},"Backspace"],
 			[{"w":1.5},"Tab","Q","W","E","R","T","Y","U","I","O","P","{\n[","}\n]",{"w":1.5},"|\n\\"],
 			[{"w":1.75},"Caps Lock","A","S","D","F","G","H","J","K","L",":\n;","\"\n'",{"w":2.25},"Enter"],
 			[{"w":2.25},"Shift","Z","X","C","V","B","N","M","<\n,",">\n.","?\n/",{"w":2.75},"Shift"],
 			[{"w":1.25},"Ctrl",{"w":1.25},"Win",{"w":1.25},"Alt",{"w":6.25},"",{"w":1.25},"Alt",{"w":1.25},"Win",{"w":1.25},"Menu",{"w":1.25},"Ctrl"]
 		] },
 		{ "name" : "ISO 60%", "data" : [
-			["¬\n`","!\n1","\"\n2","£\n3","$\n4","%\n5","^\n6","&\n7","*\n8","(\n9",")\n0","_\n-","+\n=",{"w":2},"Backspace"],
+			["Esc","!\n1","\"\n2","£\n3","$\n4","%\n5","^\n6","&\n7","*\n8","(\n9",")\n0","_\n-","+\n=",{"w":2},"Backspace"],
 			[{"w":1.5},"Tab","Q","W","E","R","T","Y","U","I","O","P","{\n[","}\n]",{"x":0.25,"w":1.25,"h":2,"w2":1.5,"h2":1,"x2":-0.25},"Enter"],
 			[{"a":4,"w":1.75},"Caps Lock","A","S","D","F","G","H","J","K","L",":\n;","@\n'","~\n#"],
 			[{"w":1.25},"Shift","|\n\\","Z","X","C","V","B","N","M","<\n,",">\n.","?\n/",{"w":2.75},"Shift"],
@@ -56,7 +56,7 @@
 			[{"w":1.25},"Ctrl",{"w":1.25},"Win",{"w":1.25},"Alt",{"a":7,"w":6.25},"",{"a":4,"w":1.25},"AltGr",{"w":1.25},"Win",{"w":1.25},"Menu",{"w":1.25},"Ctrl",{"x":0.25},"←","↓","→"]					
 		] },
 		{ "name" : "ABCDEF 60%", "data" : [
-			["~\n`","!\n1","@\n2","#\n3","$\n4","%\n5","^\n6","&\n7","*\n8","(\n9",")\n0","_\n-","+\n=",{"w":2},"Backspace"],
+			["Esc","!\n1","@\n2","#\n3","$\n4","%\n5","^\n6","&\n7","*\n8","(\n9",")\n0","_\n-","+\n=",{"w":2},"Backspace"],
 			[{"w":1.5},"Tab","A","B","C","D","E","F","G","H","I","J","{\n[","}\n]",{"w":1.5},"|\n\\"],
 			[{"w":1.75},"Caps Lock","K","L","M","N","O","P","Q","R","S",":\n;","\"\n'",{"w":2.25},"Enter"],
 			[{"w":2.25},"Shift","T","U","V","W","X","Y","Z","<\n,",">\n.","?\n/",{"w":2.75},"Shift"],
@@ -149,14 +149,15 @@
 	],
 
 	"samples" : {
-		"Apple Wireless" : "/samples/apple-wireless.json",
-		"GB: CCnG" : "/samples/gb-ccng.json",
-		"GB: Retro DSA" : "/samples/gb-retro-dsa.json",
-		"Stealth Black" : "/samples/stealth-black.json",
-		"Televideo TS-800a" : "/samples/televideo-ts-800a.json",
-		"Symbolics PN 364000" : "/samples/symbolics-364000.json",
-		"Symbolics SpaceCadet" : "/samples/symbolics-spacecadet.json",
-		"Commodore VIC-20" : "/samples/commodore-vic20.json",
-		"Programmer's Keyboard": "/samples/pkb.json"
+		"Apple Wireless" : "samples/apple-wireless.json",
+		"GB: CCnG" : "samples/gb-ccng.json",
+		"GB: Retro DSA" : "samples/gb-retro-dsa.json",
+		"Stealth Black" : "samples/stealth-black.json",
+		"Televideo TS-800a" : "samples/televideo-ts-800a.json",
+		"Symbolics PN 364000" : "samples/symbolics-364000.json",
+		"Symbolics SpaceCadet" : "samples/symbolics-spacecadet.json",
+		"Commodore VIC-20" : "samples/commodore-vic20.json",
+		"Programmer's Keyboard": "samples/pkb.json",
+		"AKE0CTF241/2 In Black" : "samples/access-is-square-enter.json"
 	}
 }
