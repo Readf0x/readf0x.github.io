@@ -7,14 +7,14 @@
   [
     {
       "y": 0.5,
-      "c": "#f5793b",
-      "t": "#1d202a",
+      "c": "#ea7238",
+      "t": "#1c1d23",
       "p": "SA",
       "a": 7
     },
     "Esc",
     {
-      "c": "#e1e7f1",
+      "c": "#cfd6e5",
       "a": 4,
       "f": 6,
       "fa": [
@@ -32,8 +32,8 @@
     },
     "\n\n\nF4\n\n\n\n\n\n<i class='fa fa-square-o'></i><i class='fa fa-square-o'></i><i class='fa fa-square-o'></i><br><i class='fa fa-square-o up'></i><i class='fa fa-square-o up'></i><i class='fa fa-square-o up'></i>",
     {
-      "c": "#1d202a",
-      "t": "#e1e7f1",
+      "c": "#1c1d23",
+      "t": "#cfd6e5",
       "f": 6,
       "fa": [
         0,
@@ -47,21 +47,21 @@
     "\n\n\nF7\n\n\n\n\n\n<i class='kb kb-Multimedia-Rewind'></i>",
     "\n\n\nF8\n\n\n\n\n\n<i class='kb kb-Multimedia-Play-Pause'></i>",
     {
-      "c": "#e1e7f1",
-      "t": "#1d202a"
+      "c": "#cfd6e5",
+      "t": "#1c1d23"
     },
     "\n\n\nF9\n\n\n\n\n\n<i class='kb kb-Multimedia-FastForwar'></i>",
     "\n\n\nF10\n\n\n\n\n\n<i class='kb kb-Multimedia-Mute-3'></i>",
     "\n\n\nF11\n\n\n\n\n\n<i class='kb kb-Multimedia-Volume-Down-2'></i>",
     "\n\n\nF12\n\n\n\n\n\n<i class='kb kb-Multimedia-Volume-Up-2'></i>",
     {
-      "c": "#f5793b",
+      "c": "#ea7238",
       "f": 3
     },
     "\n\n\n<i class='fa fa-moon-o'></i>\n\n\n\n\n\nDEL",
     {
-      "c": "#1d202a",
-      "t": "#e1e7f1",
+      "c": "#1c1d23",
+      "t": "#cfd6e5",
       "a": 7
     },
     "PS",
@@ -76,8 +76,8 @@
     },
     "~\n`",
     {
-      "c": "#e1e7f1",
-      "t": "#1d202a",
+      "c": "#cfd6e5",
+      "t": "#1c1d23",
       "a": 4
     },
     "!\n1\n\n\n\n\n\n<i class='kb kb-bluetooth'></i>1",
@@ -93,9 +93,7 @@
         0,
         0,
         0,
-        4,
-        0,
-        0
+        4
       ]
     },
     "%\n5\n\n\n\n\n\n◎",
@@ -122,8 +120,8 @@
     },
     "\n\n\n\n\n\n\n<i class='sundot'></i><i class='fa fa-sun-o'></i>\n+\n\n=",
     {
-      "c": "#1d202a",
-      "t": "#e1e7f1",
+      "c": "#1c1d23",
+      "t": "#cfd6e5",
       "a": 7,
       "f": 2,
       "w": 2
@@ -144,8 +142,8 @@
     },
     "TAB",
     {
-      "c": "#e1e7f1",
-      "t": "#1d202a",
+      "c": "#cfd6e5",
+      "t": "#1c1d23",
       "f": 6
     },
     "Q",
@@ -176,8 +174,8 @@
     "8",
     "9",
     {
-      "c": "#1d202a",
-      "t": "#e1e7f1",
+      "c": "#1c1d23",
+      "t": "#cfd6e5",
       "h": 2
     },
     "+"
@@ -189,8 +187,8 @@
     },
     "CAPS",
     {
-      "c": "#e1e7f1",
-      "t": "#1d202a",
+      "c": "#cfd6e5",
+      "t": "#1c1d23",
       "f": 6
     },
     "A",
@@ -220,16 +218,16 @@
     ":\n;",
     "\"\n'",
     {
-      "c": "#1d202a",
-      "t": "#e1e7f1",
+      "c": "#1c1d23",
+      "t": "#cfd6e5",
       "a": 7,
       "f": 2,
       "w": 2.25
     },
     "ENTER",
     {
-      "c": "#e1e7f1",
-      "t": "#1d202a",
+      "c": "#cfd6e5",
+      "t": "#1c1d23",
       "f": 6
     },
     "4",
@@ -244,15 +242,15 @@
   ],
   [
     {
-      "c": "#1d202a",
-      "t": "#e1e7f1",
+      "c": "#1c1d23",
+      "t": "#cfd6e5",
       "f": 2,
       "w": 2.25
     },
     "SHIFT",
     {
-      "c": "#e1e7f1",
-      "t": "#1d202a",
+      "c": "#cfd6e5",
+      "t": "#1c1d23",
       "f": 6
     },
     "Z",
@@ -266,28 +264,28 @@
     "><br>.",
     "?<br>/",
     {
-      "c": "#1d202a",
-      "t": "#e1e7f1",
+      "c": "#1c1d23",
+      "t": "#cfd6e5",
       "f": 2,
       "w": 1.75
     },
     "SHIFT",
     {
-      "c": "#f5793b",
-      "t": "#1d202a",
+      "c": "#ea7238",
+      "t": "#1c1d23",
       "f": 5
     },
     "<i class='fa fa-caret-up'></i>",
     {
-      "c": "#e1e7f1",
+      "c": "#cfd6e5",
       "f": 6
     },
     "1",
     "2",
     "3",
     {
-      "c": "#1d202a",
-      "t": "#e1e7f1",
+      "c": "#1c1d23",
+      "t": "#cfd6e5",
       "f": 2,
       "h": 2
     },
@@ -307,8 +305,8 @@
     },
     "COMMAND",
     {
-      "c": "#e1e7f1",
-      "t": "#1d202a",
+      "c": "#cfd6e5",
+      "t": "#1c1d23",
       "p": "SA SPACE",
       "a": 4,
       "f": 4,
@@ -316,8 +314,8 @@
     },
     "\n\n\n<i class='kb kb-bluetooth-outline'></i>",
     {
-      "c": "#1d202a",
-      "t": "#e1e7f1",
+      "c": "#1c1d23",
+      "t": "#cfd6e5",
       "p": "SA",
       "a": 7,
       "f": 7
@@ -332,14 +330,14 @@
     },
     "⌥",
     {
-      "c": "#f5793b",
-      "t": "#1d202a"
+      "c": "#ea7238",
+      "t": "#1c1d23"
     },
     "<i class='fa fa-caret-left'></i>",
     "<i class='fa fa-caret-down'></i>",
     "<i class='fa fa-caret-right'></i>",
     {
-      "c": "#e1e7f1",
+      "c": "#cfd6e5",
       "f": 6
     },
     "0",
