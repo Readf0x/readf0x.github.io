@@ -223,6 +223,7 @@
 		"Commodore VIC-20" : "samples/commodore-vic20.json",
 		"Programmer's Keyboard" : "samples/pkb.json",
 		"AKE0CTF241/2 In Black" : "samples/access-is-square-enter.json",
-		"Epomaker GK96S" : "samples/epomaker-gk96s.json"
+		"Epomaker GK96S" : "samples/epomaker-gk96s.json",
+		"Epomaker B21" : "samples/epomaker-b21.json"
 	}
 }
