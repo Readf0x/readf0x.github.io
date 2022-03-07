@@ -74,7 +74,7 @@ Nav Bar / Header
       <!-- Presets dropdown -->
       <li class="dropdown" dropdown>
         <a class="dropdown-toggle" dropdown-toggle><i class="fa fa-keyboard-o"></i> Preset <b class="caret"></b></a>
-        <ul class="dropdown-menu">
+        <ul class="dropdown-menu" style="max-height: 75vh;">
           <li class="dropdown-header">Standard Layouts:</li>
           <li ng-repeat="v in layouts"><a ng-click="loadPreset(v.data)" href="#">{{v.name}}</a></li>
           <li class="divider"></li>
