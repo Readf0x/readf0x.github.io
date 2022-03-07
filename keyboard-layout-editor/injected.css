@@ -20,13 +20,4 @@
     font-weight: normal;
     font-style: normal;
 }
-[class*='kb-']:before{
-    display: inline-block;
-    font-family: 'Glyphter';
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale
-}
 .kb-shift:before, .kb-bluetooth:before, .kb-bluetooth-outline:before{display: inline-block;font-family: 'Glyphter';font-style: normal;font-weight: normal;line-height: 1;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale}
