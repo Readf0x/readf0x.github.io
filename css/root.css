@@ -121,7 +121,7 @@ p.title {
 .text-body p:nth-child(2n+1) {
   padding-top: 96px;
 }
-a.503-li {
+a.fiveothree-li {
   height: default;
 }
 .github-ico:after {
@@ -133,7 +133,8 @@ a.503-li {
   content: "";
   display: inline-block;
   width: 1em; height: 1em;
-}body {
+}
+body {
   margin: 0 !important;
   padding: 0 !important;
 }
