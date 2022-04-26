@@ -1,4 +1,4 @@
-let debug = true;
+let debug = false;
 
 const canvas = document.createElement("canvas");
 canvas.classList.add("screensaver");
