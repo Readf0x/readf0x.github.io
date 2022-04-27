@@ -238,20 +238,20 @@ function rainbowColor(){
 	}
 
 	if(mode == 0){
-		if(!egg){r -= 1;}else{r-=Math.round(Math.random()*easter.color-(easter.color/2));}
-		if(!egg){g += 1;}else{g+=Math.round(Math.random()*easter.color-(easter.color/2));}
+		if(!egg){r -= 1;}else{r-=4;}//Math.round(Math.random()*easter.color-(easter.color/2));}
+		if(!egg){g += 1;}else{g+=4;}//Math.round(Math.random()*easter.color-(easter.color/2));}
 		logoColor = 'rgb('+r+', '+g+', '+b+')';
 		return;
 	}
 	if(mode == 1){
-		if(!egg){g -= 1;}else{g-=Math.round(Math.random()*easter.color-(easter.color/2));}
-		if(!egg){b += 1;}else{b+=Math.round(Math.random()*easter.color-(easter.color/2));}
+		if(!egg){g -= 1;}else{g-=4;}//Math.round(Math.random()*easter.color-(easter.color/2));}
+		if(!egg){b += 1;}else{b+=4;}//Math.round(Math.random()*easter.color-(easter.color/2));}
 		logoColor = 'rgb('+r+', '+g+', '+b+')';
 		return;
 	}
 	if(mode == 2){
-		if(!egg){b -= 1;}else{b-=Math.round(Math.random()*easter.color-(easter.color/2));}
-		if(!egg){r += 1;}else{r+=Math.round(Math.random()*easter.color-(easter.color/2));}
+		if(!egg){b -= 1;}else{b-=4;}//Math.round(Math.random()*easter.color-(easter.color/2));}
+		if(!egg){r += 1;}else{r+=4;}//Math.round(Math.random()*easter.color-(easter.color/2));}
 		logoColor = 'rgb('+r+', '+g+', '+b+')';
 		return;
 	}
