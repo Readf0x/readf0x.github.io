@@ -184,9 +184,10 @@ function update() {
         dvd.y+=dvd.yspeed;
         
         checkHitBox();
-		//pickColor();
-		rainbowColor();
-		getCanvas();
+	//pickColor();
+	rainbowColor();
+    	if(egg){rainbowColor();rainbowColor();rainbowColor();}
+	getCanvas();
         update();
     }, speed)
 }
@@ -238,20 +239,26 @@ function rainbowColor(){
 	}
 
 	if(mode == 0){
-		if(!egg){r -= 1;}else{r-=4;}//Math.round(Math.random()*easter.color-(easter.color/2));}
-		if(!egg){g += 1;}else{g+=4;}//Math.round(Math.random()*easter.color-(easter.color/2));}
+		//if(!egg){r -= 1;}else{r-=4;}//Math.round(Math.random()*easter.color-(easter.color/2));}
+		//if(!egg){g += 1;}else{g+=4;}//Math.round(Math.random()*easter.color-(easter.color/2));}
+		r -= 1;
+		g += 1;
 		logoColor = 'rgb('+r+', '+g+', '+b+')';
 		return;
 	}
 	if(mode == 1){
-		if(!egg){g -= 1;}else{g-=4;}//Math.round(Math.random()*easter.color-(easter.color/2));}
-		if(!egg){b += 1;}else{b+=4;}//Math.round(Math.random()*easter.color-(easter.color/2));}
+		//if(!egg){g -= 1;}else{g-=4;}//Math.round(Math.random()*easter.color-(easter.color/2));}
+		//if(!egg){b += 1;}else{b+=4;}//Math.round(Math.random()*easter.color-(easter.color/2));}
+		g -= 1;
+		b += 1;
 		logoColor = 'rgb('+r+', '+g+', '+b+')';
 		return;
 	}
 	if(mode == 2){
-		if(!egg){b -= 1;}else{b-=4;}//Math.round(Math.random()*easter.color-(easter.color/2));}
-		if(!egg){r += 1;}else{r+=4;}//Math.round(Math.random()*easter.color-(easter.color/2));}
+		//if(!egg){b -= 1;}else{b-=4;}//Math.round(Math.random()*easter.color-(easter.color/2));}
+		//if(!egg){r += 1;}else{r+=4;}//Math.round(Math.random()*easter.color-(easter.color/2));}
+		b -= 1;
+		r += 1;
 		logoColor = 'rgb('+r+', '+g+', '+b+')';
 		return;
 	}
