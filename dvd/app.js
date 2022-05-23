@@ -371,7 +371,7 @@ function update() {
 		getCanvas();
 		updates+=1;}
 		updates=0;
-		scale = ((canvas.width*0.2)/1920).toFixed(2);
+		scale = ((canvas.width*0.15)/1920).toFixed(2);
 		update();
 	}, speed)
 }
