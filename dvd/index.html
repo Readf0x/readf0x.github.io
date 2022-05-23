@@ -26,8 +26,8 @@
 				border:2px inset gray;
 				color:#0f0;
 				height:25px;
-				font-family:;
-			}
+				/* font-family:; */
+			}input[type="text"]{height:19px;}
 			input[type="text"] {border-right:none;font-family: 'Ubuntu Mono', monospace;}
 			button {border-left:none;}
 			input:focus, button:focus {outline:none;}
@@ -41,7 +41,7 @@
 				display: inline-block;
 				border: .1em solid currentColor;
 				width: .83em;
-				height: .83em;
+				height: .80em;
 				position: relative;
 				/*bottom: .1em;*/
 			}
@@ -62,7 +62,7 @@
 				top: .155em;
 				left: -.1em;
 			}
-			#button:hover,#full-screen-icon:hover{cursor:pointer; !important}
+			#button:hover,#full-screen-icon:hover{cursor:pointer !important;}
 			#input:hover{cursor:text !important;}
 		</style>
 		<style id="full-screen-style"></style>
@@ -75,6 +75,7 @@
 			</form>
 			<button style="opacity:0;" id="button" onclick="openFullscreen()"><span id="full-screen-icon" class="full-screen"></span></button>
 		</div>
+		<script src="src.js"></script>
 		<script src="app.js"></script>
     </body>
 </html>
