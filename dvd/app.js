@@ -122,11 +122,6 @@ document.onmousemove = function(m) {
 	mouseMove = true;
 }
 
-document.onmousemove = function(m) {
-	pointerX = m.pageX;
-	pointerY = m.pageY;
-}
-
 getCanvas()
 
 let speed = 2;
@@ -212,9 +207,6 @@ function checkCorner(){
 
     canvas.width  = window.innerWidth;
     canvas.height = window.innerHeight;
-	
-	updates=0;
-	updateSpeed=0;
 
 	updates=0;
 	updateSpeed=0;
@@ -329,18 +321,6 @@ function update() {
 			updatesSinceKeyUp+=1;
 			if(updatesSinceKeyUp>500){keyUp=false;updatesSinceKeyUp=undefined;}
 
-		}
-		if(corner){
-			if(updatesSinceCorner>200){
-			ctx.fillStyle='rgb('+(r-((updatesSinceCorner-200)*r)/100)+','+(g-((updatesSinceCorner-200)*g)/100)+','+(b-((updatesSinceCorner-200)*b)/100)+')';
-			}else{ctx.fillStyle=logoColor;}
-			if(egg){ctx.fillStyle='#fff'}
-			if(egg && updatesSinceCorner>200){
-			ctx.fillStyle='rgb('+(r+(255-((updatesSinceCorner-200)*255)/100))+', '+(g+(255-((updatesSinceCorner-200)*255)/100))+', '+(b+(255-((updatesSinceCorner-200)*255)/100))+')';}
-			ctx.font='50px sans-serif';
-			ctx.fillText('You\'ve hit the corner '+cornerCount+' times now!', (canvas.width/2-(ctx.measureText('You\'ve hit the corner '+cornerCount+' times now!').width/2)), 75);
-			updatesSinceCorner+=1;
-			if(updatesSinceCorner>300){corner=false;updatesSinceCorner=undefined;}
 		}
 		
 		if(corner){
