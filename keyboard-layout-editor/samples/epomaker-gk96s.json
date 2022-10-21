@@ -1,12 +1,12 @@
 [
   {
+    "backcolor": "#1c1d23",
     "name": "Epomaker GK96S",
     "author": "Epomaker",
     "css": "*.keylabels {\n    font-family:\"Helvetica\",\"Arial\",sans-serif;\n}\ni.down:after {\n    font-style: normal;\n    content:\"←\";\n    position: relative;\n    bottom: 0em;\n    left: .1em;\n}\n.sundot:before {\n    content:\"•\";\n    position:relative;\n    left:.67em;\n}\n.sunm:before {\n    font-family:'FontAwesome';\n    font-style:normal;\n    font-size:.35em;\n    content:\"\\f04c\";\n    position:relative;\n    left:1.75em;\n    bottom:.6em;\n}\n.sunk:before {\n    font-style:normal;\n    font-size:.6em;\n    content:\"N\";\n    position:relative;\n    left:1.20em;\n    bottom:.25em;\n}\n.up {\n    position:relative;\n    bottom:.3em;\n}\n.fa-square-o {\n    font-size:.9em;\n}\n.dcs {font-family:'engravers_gothic_fsregular';font-style:normal;}\n.bar {\n    background:url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAACCAYAAABhYU3QAAAAGElEQVQI12P4//+/ODGYAUwwMAThwyA1ACUKJ4H2Fi17AAAAAElFTkSuQmCC\");\n    background-repeat:no-repeat;\n    background-position:center;\n    background-size:.73em;\n    content:\"\";\n    display:inline-block;\n    height:1em;\n    width:1em;\n    top:.4em;\n    position:relative;\n}"
   },
   [
     {
-      "y": 0.5,
       "c": "#ea7238",
       "t": "#1c1d23",
       "p": "SA",
