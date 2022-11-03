@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Webpage editor demo</title>
+<style type="text/css" media="screen">
+    #nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 40px;
+        width: 100%;
+        background: #ececec;
+        z-index: 1;
+    }
+
+    .ace_scroller {
+        border-radius: 10px 0 0 0 !important;
+        background-color: white;
+    }
+
+    .ace_print-margin {
+        display: none;
+    }
+
+    button {
+        margin: 9px;
+        margin-right: 0;
+        border: 1px solid #333;
+        color: #333;
+        border-radius: 3px;
+        background: none;
+        display: inline-block;
+        font: 12px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+    }
+
+    button:hover {
+        cursor: pointer;
+        background: #e5e5e5;
+    }
+
+    #content {
+        height: calc(100% - 40px);
+    }
+
+    #editor { 
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        display: block;
+        border-right: 1px solid #ececec;
+        width: calc(50% - 1px);
+        z-index: 0;
+        height: inherit;
+        background-color: #ececec;
+    }
+
+    #output { 
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: calc(50% - 1px);
+        border: none;
+        border-left: 1px solid #ececec;
+        height: inherit;
+        z-index: 0;
+    }
+</style>
+</head>
+<body>
+
+<div id="nav">
+<button title="Switch to HTML" onclick="switchSession(html,'ace/mode/html')">HTML</button>
+<button title="Switch to CSS" onclick="switchSession(css,'ace/mode/css')">CSS</button>
+<button title="Switch to JS" onclick="switchSession(js,'ace/mode/javascript')">JS</button>
+<button title="Toggle Output Sidebar" onclick="toggleOutput()">Output</button>
+<button title="Toggle Output Window" onclick="sendOutput()">Window</button>
+</div>
+
+<div id="content">
+<div id="editor" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);"></div>
+<iframe id="output"></iframe>
+</div>
+
+<script src="ace/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="ace/src-noconflict/ext-language_tools.js"></script>
+<script>
+    ace.require("ace/ext/language_tools");
+    // init editor
+    var editor = ace.edit("editor");
+    var output = document.getElementById("output");
+    editor.setTheme("ace/theme/cloud9_day");
+    var html = ace.createEditSession(["<!DOCTYPE html>","<html>","\t<head>","\t\t<title>Example Page</title>","\t</head>","\t<body>","\t\t<h1>Example Page</h1>","\t\t<p>Lorem Ipsum Dolor Sit Amet</p>","\t\t<button onclick='button()' id='button'>Button</button>","\t</body>","</html>"]);
+    var css = ace.createEditSession(["html {","\tbackground: #faf0ff;","}"]);
+    var js = ace.createEditSession(["function button() {","\tdocument.body.appendChild(document.createTextNode('This was created dynamically! '));","}"]);
+    // switch to html session
+    editor.setSession(html);
+    editor.session.setMode("ace/mode/html");
+    // set editor options
+    editor.setOptions({
+        enableBasicAutocompletion: true
+    });
+    // remove selection from .setValue()
+    ace.edit('editor').moveCursorTo(0,0);
+    sendOutput();
+
+    // ace event listener
+    editor.on('change', function(event) {
+        sendOutput();
+    });
+
+    function sendOutput() {
+        // update iframe srcdoc
+        output.srcdoc = html.getValue();
+        // wait for output to load
+        output.onload = () => {
+            // create new element
+            const iframeDocument = output.contentDocument;
+            const style = document.createElement("style");
+            const script = document.createElement("script");
+            // append session to new element
+            style.appendChild(document.createTextNode(css.getValue()));
+            script.appendChild(document.createTextNode(js.getValue()));
+            // append new element to iframe
+            iframeDocument.head.appendChild(style);
+            iframeDocument.body.appendChild(script);
+        }
+    }
+
+    function dragOverHandler(ev) {
+        // prevent default drag event
+        ev.preventDefault();
+    }
+
+    function dropHandler(ev) {
+        // prevent default drag event
+        ev.preventDefault();
+        // grab file from drag and drop
+        const textValue = ev.dataTransfer.files[0].text();
+        // wait until the promise is fulfilled to move the cursor
+        textValue.then((value) => {
+            editor.setValue(value);
+            ace.edit('editor').moveCursorTo(0,0);
+        });
+    }
+
+    function toggleOutput() {
+        // if the output pane is displayed, hide it
+        if(output.style.display != "none") {
+            output.style.display = "none";
+            document.getElementById("editor").style.width = "100%";
+        // if the output pane isn't displayed, show it
+        }else{
+            output.style.display = "block";
+            document.getElementById("editor").style.width = "50%";
+        }
+    }
+
+    // todo: create popup window containing output pane
+    function openWindow() {
+        
+    }
+
+    // self-explanatory
+    function switchSession(name,mode) {
+        editor.setSession(name);
+        editor.session.setMode(mode);
+    }
+</script>
+</body>
+</html>
