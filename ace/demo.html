@@ -73,7 +73,7 @@
 <button title="Switch to CSS" onclick="switchSession(css,'ace/mode/css')">CSS</button>
 <button title="Switch to JS" onclick="switchSession(js,'ace/mode/javascript')">JS</button>
 <button title="Toggle Output Sidebar" onclick="toggleOutput()">Output</button>
-<button title="Toggle Output Window" onclick="sendOutput()">Window</button>
+<button title="Reload Output" onclick="sendOutput()">Reload</button>
 </div>
 
 <div id="content">
@@ -89,9 +89,9 @@
     var editor = ace.edit("editor");
     var output = document.getElementById("output");
     editor.setTheme("ace/theme/cloud9_day");
-    var html = ace.createEditSession(["<!DOCTYPE html>","<html>","\t<head>","\t\t<title>Example Page</title>","\t</head>","\t<body>","\t\t<h1>Example Page</h1>","\t\t<p>Lorem Ipsum Dolor Sit Amet</p>","\t\t<button onclick='button()' id='button'>Button</button>","\t</body>","</html>"]);
-    var css = ace.createEditSession(["html {","\tbackground: #faf0ff;","}"]);
-    var js = ace.createEditSession(["function button() {","\tdocument.body.appendChild(document.createTextNode('This was created dynamically! '));","}"]);
+    var html = ace.createEditSession(["<!DOCTYPE html>","<html>","\t<head>","\t\t<title>Example Page</title>","\t</head>","\t<body>","\t\t<h1>Example Page</h1>","\t\t<p>Lorem Ipsum Dolor Sit Amet</p>","\t\t<button onclick='text()' id='text'>Create text</button>","\t\t<button onclick='color()' id='color'>Change color</button>","\t</body>","</html>",""]);
+    var css = ace.createEditSession([":root {","\t--primary-color: white;","\t--secondary-color: black;","}","","body {","\tfont-family: 'Arial';","\tbackground-color: var(--primary-color);","\tcolor: var(--secondary-color);","}","","button {","\tdisplay: inline-block;","\tcolor: inherit;","\tbackground-color: transparent;","\tborder: 1px solid var(--secondary-color);","\tborder-radius: 5px;","}","",".demo-text {","\tdisplay: inline-block;","\tmargin: 0 3px;","}",""]);
+    var js = ace.createEditSession(["function text(string = 'This was created dynamically!') {","\tconst para = document.createElement('p');","\tconst text = document.createTextNode(string);","\tpara.appendChild(text);","\tpara.className = 'demo-text'","\tdocument.body.appendChild(para);","}","","// https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb","// https://stackoverflow.com/questions/22603510/is-this-possible-to-detect-a-colour-is-a-light-or-dark-colour","function color(r = Math.round(Math.random()*255),","\t\t\t   g = Math.round(Math.random()*255),","\t\t\t   b = Math.round(Math.random()*255)) {","\tvar rgb = '#'+(r.toString(16).length == 1 ? '0' + r.toString(16) : r.toString(16))+","\t\t\t\t  (g.toString(16).length == 1 ? '0' + g.toString(16) : g.toString(16))+","\t\t\t\t  (b.toString(16).length == 1 ? '0' + b.toString(16) : b.toString(16));","\tdocument.querySelector(':root').style.setProperty('--primary-color', rgb);","const hsp = Math.sqrt(0.299 * (r * r) + 0.587 * (g * g) + 0.114 * (b * b));","document.querySelector(':root').style.setProperty('--secondary-color', (hsp > 127.5 ? 'black' : 'white'));","}","","color(251, 240, 255);",""]);
     // switch to html session
     editor.setSession(html);
     editor.session.setMode("ace/mode/html");
