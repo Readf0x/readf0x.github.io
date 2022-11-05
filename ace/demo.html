@@ -3,30 +3,40 @@
 <head>
 <title>Webpage editor demo</title>
 <style type="text/css" media="screen">
+    :focus {outline: none;}
+
+    :root {
+        --primary: #FBFBFB;
+        --secondary: #ECECEC;
+        --tertiary: #333;
+        --quaternary: rgba(0, 0, 0, 0.07);
+    }
+    
     #nav {
         position: absolute;
         top: 0;
         left: 0;
         height: 40px;
         width: 100%;
-        background: #ececec;
+        background: var(--secondary);
         z-index: 1;
     }
 
     .ace_scroller {
         border-radius: 10px 0 0 0 !important;
-        background-color: white;
+        background-color: var(--primary);
     }
 
     .ace_print-margin {
         display: none;
     }
 
-    button {
+    button, input, .input-text {
         margin: 9px;
         margin-right: 0;
-        border: 1px solid #333;
-        color: #333;
+        padding: 1px 6px;
+        border: 1px solid var(--tertiary);
+        color: var(--tertiary);
         border-radius: 3px;
         background: none;
         display: inline-block;
@@ -35,7 +45,20 @@
 
     button:hover {
         cursor: pointer;
-        background: #e5e5e5;
+        background: var(--quaternary);
+    }
+
+    .input-text {
+        border-radius: 3px 0 0 3px;
+        border-right: none;
+        padding-right: 0;
+        margin: 0;
+    }
+
+    input {
+        border-radius: 0 3px 3px 0;
+        border-left: none;
+        margin: 0;
     }
 
     #content {
@@ -47,11 +70,11 @@
         left: 0;
         bottom: 0;
         display: block;
-        border-right: 1px solid #ececec;
+        border-right: 1px solid var(--secondary);
         width: calc(50% - 1px);
         z-index: 0;
         height: inherit;
-        background-color: #ececec;
+        background-color: var(--secondary);
     }
 
     #output { 
@@ -60,7 +83,7 @@
         bottom: 0;
         width: calc(50% - 1px);
         border: none;
-        border-left: 1px solid #ececec;
+        border-left: 1px solid var(--secondary);
         height: inherit;
         z-index: 0;
     }
@@ -74,6 +97,12 @@
 <button title="Switch to JS" onclick="switchSession(js,'ace/mode/javascript')">JS</button>
 <button title="Toggle Output Sidebar" onclick="toggleOutput()">Output</button>
 <button title="Reload Output" onclick="sendOutput()">Reload</button>
+<button title="Erase everything and start anew" onclick="newFile()">New</button>
+<button title="Save file(s)" onclick="saveFile()">Save</button>
+<form style="display: inline-block; cursor: text; margin: 9px 0 9px 9px;" autocomplete="off" id="form" onclick="input.focus()">
+<p class="input-text">Theme:</p><input type="text" name="theme" id="themePicker" oninput="input.setAttribute('size', input.value.length > 4 ? input.value.length : 4)" size="4" spellcheck="false">
+<!-- <input type="submit" style="display: none" /> -->
+</form>
 </div>
 
 <div id="content">
@@ -88,10 +117,13 @@
     // init editor
     var editor = ace.edit("editor");
     var output = document.getElementById("output");
+    var editDiv = document.getElementById("editor");
+    var input = document.getElementById("themePicker");
+    var form = document.getElementById("form");
     editor.setTheme("ace/theme/cloud9_day");
     var html = ace.createEditSession(["<!DOCTYPE html>","<html>","\t<head>","\t\t<title>Example Page</title>","\t</head>","\t<body>","\t\t<h1>Example Page</h1>","\t\t<p>Lorem Ipsum Dolor Sit Amet</p>","\t\t<button onclick='text()' id='text'>Create text</button>","\t\t<button onclick='color()' id='color'>Change color</button>","\t</body>","</html>",""]);
-    var css = ace.createEditSession([":root {","\t--primary-color: white;","\t--secondary-color: black;","}","","body {","\tfont-family: 'Arial';","\tbackground-color: var(--primary-color);","\tcolor: var(--secondary-color);","}","","button {","\tdisplay: inline-block;","\tcolor: inherit;","\tbackground-color: transparent;","\tborder: 1px solid var(--secondary-color);","\tborder-radius: 5px;","}","",".demo-text {","\tdisplay: inline-block;","\tmargin: 0 3px;","}",""]);
-    var js = ace.createEditSession(["function text(string = 'This was created dynamically!') {","\tconst para = document.createElement('p');","\tconst text = document.createTextNode(string);","\tpara.appendChild(text);","\tpara.className = 'demo-text'","\tdocument.body.appendChild(para);","}","","// https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb","// https://stackoverflow.com/questions/22603510/is-this-possible-to-detect-a-colour-is-a-light-or-dark-colour","function color(r = Math.round(Math.random()*255),","\t\t\t   g = Math.round(Math.random()*255),","\t\t\t   b = Math.round(Math.random()*255)) {","\tvar rgb = '#'+(r.toString(16).length == 1 ? '0' + r.toString(16) : r.toString(16))+","\t\t\t\t  (g.toString(16).length == 1 ? '0' + g.toString(16) : g.toString(16))+","\t\t\t\t  (b.toString(16).length == 1 ? '0' + b.toString(16) : b.toString(16));","\tdocument.querySelector(':root').style.setProperty('--primary-color', rgb);","const hsp = Math.sqrt(0.299 * (r * r) + 0.587 * (g * g) + 0.114 * (b * b));","document.querySelector(':root').style.setProperty('--secondary-color', (hsp > 127.5 ? 'black' : 'white'));","}","","color(251, 240, 255);",""]);
+    var css = ace.createEditSession([":root {","\t--primary-color: white;","\t--secondary-color: black;","}","","body {","\tfont-family: 'Arial';","\tbackground-color: var(--primary-color);","\tcolor: var(--secondary-color);","}","","button {","\tdisplay: inline-block;","\tcolor: inherit;","\tbackground-color: transparent;","\tborder: 1px solid var(--secondary-color);","\tborder-radius: 5px;","}","","button:hover {","\tcursor: pointer;","}","",".demo-text {","\tdisplay: inline-block;","\tmargin: 0 3px;","}",""]);
+    var js = ace.createEditSession(["function text(string = 'This was created dynamically!') {","\tconst para = document.createElement('p');","\tconst text = document.createTextNode(string);","\tpara.appendChild(text);","\tpara.className = 'demo-text'","\tdocument.body.appendChild(para);","}","","// https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb","// https://stackoverflow.com/questions/22603510/is-this-possible-to-detect-a-colour-is-a-light-or-dark-colour","function color(r = Math.round(Math.random()*255),","\t\t\t   g = Math.round(Math.random()*255),","\t\t\t   b = Math.round(Math.random()*255)) {","\tvar rgb = '#'+(r.toString(16).length == 1 ? '0' + r.toString(16) : r.toString(16))+","\t\t\t\t  (g.toString(16).length == 1 ? '0' + g.toString(16) : g.toString(16))+","\t\t\t\t  (b.toString(16).length == 1 ? '0' + b.toString(16) : b.toString(16));","\tdocument.querySelector(':root').style.setProperty('--primary-color', rgb);","\tconst hsp = Math.sqrt(0.299 * (r * r) + 0.587 * (g * g) + 0.114 * (b * b));","\tdocument.querySelector(':root').style.setProperty('--secondary-color', (hsp > 127.5 ? 'black' : 'white'));","}","","color(251, 240, 255);",""]);
     // switch to html session
     editor.setSession(html);
     editor.session.setMode("ace/mode/html");
@@ -102,6 +134,7 @@
     // remove selection from .setValue()
     ace.edit('editor').moveCursorTo(0,0);
     sendOutput();
+    document.querySelector(".ace_text-input").focus();
 
     // ace event listener
     editor.on('change', function(event) {
@@ -124,6 +157,7 @@
             iframeDocument.head.appendChild(style);
             iframeDocument.body.appendChild(script);
         }
+        document.querySelector(".ace_text-input").focus();
     }
 
     function dragOverHandler(ev) {
@@ -147,12 +181,16 @@
         // if the output pane is displayed, hide it
         if(output.style.display != "none") {
             output.style.display = "none";
-            document.getElementById("editor").style.width = "100%";
+            editDiv.style.width = "100%";
+            editDiv.style.borderRight = "none";
+            document.querySelector(".ace_scrollbar-h").style.width = null;
         // if the output pane isn't displayed, show it
         }else{
             output.style.display = "block";
-            document.getElementById("editor").style.width = "50%";
+            editDiv.style.width = "calc(50% - 1px)";
+            editDiv.style.borderRight = "1px solid #ececec";
         }
+        document.querySelector(".ace_text-input").focus();
     }
 
     // todo: create popup window containing output pane
@@ -160,10 +198,35 @@
         
     }
 
+    function newFile() {
+        if(window.confirm("Are you sure you want to start a new file?\nThis will erase EVERYTHING!")) {
+            html.setValue("<!DOCTYPE html>\n<html>\n\t<head>\n\t\t\n\t</head>\n\t<body>\n\t\t\n\t</body>\n</html>\n");
+            css.setValue("");
+            js.setValue("");
+            ace.edit('editor').moveCursorTo(0,0);
+            ace.edit('editor').moveCursorTo(6,2);
+        }
+        document.querySelector(".ace_text-input").focus();
+    }
+
+    form.addEventListener("submit", (ev) => {
+        ev.preventDefault();
+        // editor.setValue(input.value);
+        editor.setTheme("ace/theme/"+input.value);
+        var checkExist = setInterval(() => {
+            if (document.getElementById("ace-"+input.value.replace("_","-"))) {
+                var styleAce = document.getElementById("ace-"+input.value.replace("_","-"));
+                document.querySelector(":root").style;
+                clearInterval(checkExist);
+            }
+        }, 30);
+    });
+
     // self-explanatory
     function switchSession(name,mode) {
         editor.setSession(name);
         editor.session.setMode(mode);
+        document.querySelector(".ace_text-input").focus();
     }
 </script>
 </body>
