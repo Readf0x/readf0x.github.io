@@ -9,7 +9,7 @@
         --primary: #FBFBFB;
         --secondary: #ECECEC;
         --tertiary: #333;
-        --quaternary: rgba(0, 0, 0, 0.07);
+        --quarternary: rgba(0, 0, 0, 0.07);
     }
     
     #nav {
@@ -22,10 +22,10 @@
         z-index: 1;
     }
 
-    .ace_scroller {
+    /* .ace_scroller {
         border-radius: 10px 0 0 0 !important;
         background-color: var(--primary);
-    }
+    } */
 
     .ace_print-margin {
         display: none;
@@ -45,7 +45,7 @@
 
     button:hover {
         cursor: pointer;
-        background: var(--quaternary);
+        background: var(--quarternary);
     }
 
     .input-text {
@@ -74,7 +74,6 @@
         width: calc(50% - 1px);
         z-index: 0;
         height: inherit;
-        background-color: var(--secondary);
     }
 
     #output { 
@@ -142,22 +141,27 @@
     });
 
     function sendOutput() {
-        // update iframe srcdoc
-        output.srcdoc = html.getValue();
-        // wait for output to load
-        output.onload = () => {
-            // create new element
-            const iframeDocument = output.contentDocument;
-            const style = document.createElement("style");
-            const script = document.createElement("script");
-            // append session to new element
-            style.appendChild(document.createTextNode(css.getValue()));
-            script.appendChild(document.createTextNode(js.getValue()));
-            // append new element to iframe
-            iframeDocument.head.appendChild(style);
-            iframeDocument.body.appendChild(script);
+        if(output.style.display != "none") {
+            // update iframe srcdoc
+            output.srcdoc = html.getValue();
+            // wait for output to load
+            output.onload = () => {
+                // create new element
+                const iframeDocument = output.contentDocument;
+                const style = document.createElement("style");
+                const script = document.createElement("script");
+                // append session to new element
+                style.appendChild(document.createTextNode(css.getValue()));
+                script.appendChild(document.createTextNode(js.getValue()));
+                // append new element to iframe
+                iframeDocument.head.appendChild(style);
+                iframeDocument.body.appendChild(script);
+            }
+            document.querySelector(".ace_text-input").focus();
+        }else{
+            output.srcdoc = "";
+            document.querySelector(".ace_text-input").focus();
         }
-        document.querySelector(".ace_text-input").focus();
     }
 
     function dragOverHandler(ev) {
@@ -211,16 +215,23 @@
 
     form.addEventListener("submit", (ev) => {
         ev.preventDefault();
-        // editor.setValue(input.value);
-        editor.setTheme("ace/theme/"+input.value);
+        themey(input.value);
+    });
+
+    function themey(name) {
+        editor.setTheme("ace/theme/"+name);
         var checkExist = setInterval(() => {
-            if (document.getElementById("ace-"+input.value.replace("_","-"))) {
-                var styleAce = document.getElementById("ace-"+input.value.replace("_","-"));
-                document.querySelector(":root").style;
+            if (document.getElementById("ace-"+name.replace("_","-"))) {
+                const aceStyle = document.getElementById("ace-"+name.replace("_","-"));
+                document.querySelector(":root").style.setProperty("--primary", window.getComputedStyle(editDiv).getPropertyValue("background-color"));
+                document.querySelector(":root").style.setProperty("--secondary", window.getComputedStyle(document.querySelector(".ace_gutter")).getPropertyValue("background-color"));
+                document.querySelector(":root").style.setProperty("--tertiary", window.getComputedStyle(document.querySelector(".ace_gutter")).getPropertyValue("color"));
+                document.querySelector(":root").style.setProperty("--quarternary", window.getComputedStyle(document.querySelector(".ace_active-line")).getPropertyValue("background-color"));
+                // editor.setValue(window.getComputedStyle(document.querySelector(".ace_gutter")).getPropertyValue("background-color"));
                 clearInterval(checkExist);
             }
         }, 30);
-    });
+    }
 
     // self-explanatory
     function switchSession(name,mode) {
@@ -228,6 +239,8 @@
         editor.session.setMode(mode);
         document.querySelector(".ace_text-input").focus();
     }
+
+    toggleOutput();
 </script>
 </body>
 </html>
