@@ -71,7 +71,7 @@
         bottom: 0;
         display: block;
         border-right: 1px solid var(--secondary);
-        width: calc(50% - 1px);
+        width: 50%;
         z-index: 0;
         height: inherit;
     }
@@ -133,6 +133,8 @@
     // remove selection from .setValue()
     ace.edit('editor').moveCursorTo(0,0);
     sendOutput();
+    input.value="cloud9_day";
+    input.setAttribute("size", input.value.length > 4 ? input.value.length : 4);
     document.querySelector(".ace_text-input").focus();
 
     // ace event listener
@@ -239,8 +241,6 @@
         editor.session.setMode(mode);
         document.querySelector(".ace_text-input").focus();
     }
-
-    toggleOutput();
 </script>
 </body>
 </html>
