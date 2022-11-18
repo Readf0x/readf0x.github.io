@@ -80,7 +80,7 @@
         position: absolute;
         right: 0;
         bottom: 0;
-        width: calc(50% - 1px);
+        width: 50%;
         border: none;
         border-left: 1px solid var(--secondary);
         height: inherit;
@@ -119,7 +119,15 @@
     var editDiv = document.getElementById("editor");
     var input = document.getElementById("themePicker");
     var form = document.getElementById("form");
-    editor.setTheme("ace/theme/cloud9_day");
+    var savedTheme = "";
+    if(window.localStorage.theme) {
+        savedTheme = window.localStorage.theme;
+    }else{
+        savedTheme = "cloud9_day";
+    }
+    themey(savedTheme);
+    input.value = savedTheme;
+    input.setAttribute("size", input.value.length > 4 ? input.value.length : 4);
     var html = ace.createEditSession(["<!DOCTYPE html>","<html>","\t<head>","\t\t<title>Example Page</title>","\t</head>","\t<body>","\t\t<h1>Example Page</h1>","\t\t<p>Lorem Ipsum Dolor Sit Amet</p>","\t\t<button onclick='text()' id='text'>Create text</button>","\t\t<button onclick='color()' id='color'>Change color</button>","\t</body>","</html>",""]);
     var css = ace.createEditSession([":root {","\t--primary-color: white;","\t--secondary-color: black;","}","","body {","\tfont-family: 'Arial';","\tbackground-color: var(--primary-color);","\tcolor: var(--secondary-color);","}","","button {","\tdisplay: inline-block;","\tcolor: inherit;","\tbackground-color: transparent;","\tborder: 1px solid var(--secondary-color);","\tborder-radius: 5px;","}","","button:hover {","\tcursor: pointer;","}","",".demo-text {","\tdisplay: inline-block;","\tmargin: 0 3px;","}",""]);
     var js = ace.createEditSession(["function text(string = 'This was created dynamically!') {","\tconst para = document.createElement('p');","\tconst text = document.createTextNode(string);","\tpara.appendChild(text);","\tpara.className = 'demo-text'","\tdocument.body.appendChild(para);","}","","// https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb","// https://stackoverflow.com/questions/22603510/is-this-possible-to-detect-a-colour-is-a-light-or-dark-colour","function color(r = Math.round(Math.random()*255),","\t\t\t   g = Math.round(Math.random()*255),","\t\t\t   b = Math.round(Math.random()*255)) {","\tvar rgb = '#'+(r.toString(16).length == 1 ? '0' + r.toString(16) : r.toString(16))+","\t\t\t\t  (g.toString(16).length == 1 ? '0' + g.toString(16) : g.toString(16))+","\t\t\t\t  (b.toString(16).length == 1 ? '0' + b.toString(16) : b.toString(16));","\tdocument.querySelector(':root').style.setProperty('--primary-color', rgb);","\tconst hsp = Math.sqrt(0.299 * (r * r) + 0.587 * (g * g) + 0.114 * (b * b));","\tdocument.querySelector(':root').style.setProperty('--secondary-color', (hsp > 127.5 ? 'black' : 'white'));","}","","color(251, 240, 255);",""]);
@@ -133,9 +141,10 @@
     // remove selection from .setValue()
     ace.edit('editor').moveCursorTo(0,0);
     sendOutput();
-    input.value="cloud9_day";
-    input.setAttribute("size", input.value.length > 4 ? input.value.length : 4);
-    document.querySelector(".ace_text-input").focus();
+    if(window.localStorage.output=="false") {
+        window.localStorage.output = "true";
+        toggleOutput();
+    }
 
     // ace event listener
     editor.on('change', function(event) {
@@ -159,11 +168,10 @@
                 iframeDocument.head.appendChild(style);
                 iframeDocument.body.appendChild(script);
             }
-            document.querySelector(".ace_text-input").focus();
         }else{
             output.srcdoc = "";
-            document.querySelector(".ace_text-input").focus();
         }
+        document.querySelector(".ace_text-input").focus();
     }
 
     function dragOverHandler(ev) {
@@ -178,24 +186,30 @@
         const textValue = ev.dataTransfer.files[0].text();
         // wait until the promise is fulfilled to move the cursor
         textValue.then((value) => {
-            editor.setValue(value);
-            ace.edit('editor').moveCursorTo(0,0);
+            if(window.confirm("Are you sure you want to open "+ev.dataTransfer.files[0].name+"?\nThis will erase EVERYTHING!")) {
+                editor.setValue(value);
+                ace.edit('editor').moveCursorTo(0,0);
+            }
+            document.querySelector(".ace_text-input").focus();
         });
     }
 
     function toggleOutput() {
         // if the output pane is displayed, hide it
-        if(output.style.display != "none") {
+        if(window.localStorage.output=="true") {
+            window.localStorage.output = "false";
             output.style.display = "none";
             editDiv.style.width = "100%";
             editDiv.style.borderRight = "none";
-            document.querySelector(".ace_scrollbar-h").style.width = null;
         // if the output pane isn't displayed, show it
         }else{
+            window.localStorage.output = "true";
             output.style.display = "block";
             editDiv.style.width = "calc(50% - 1px)";
             editDiv.style.borderRight = "1px solid #ececec";
+            sendOutput();
         }
+        editor.resize();
         document.querySelector(".ace_text-input").focus();
     }
 
@@ -222,6 +236,7 @@
 
     function themey(name) {
         editor.setTheme("ace/theme/"+name);
+        window.localStorage.theme = name;
         var checkExist = setInterval(() => {
             if (document.getElementById("ace-"+name.replace("_","-"))) {
                 const aceStyle = document.getElementById("ace-"+name.replace("_","-"));
