@@ -233,9 +233,9 @@
 
     function saveFile() {
         // alert(editMode);
-        if(editMode == "html") {var file = new File([html.getValue()], "test.html", {type: "text/html"});}
-        else if(editMode == "css") {var file = new File([css.getValue()], "test.css", {type: "text/css"});}
-        else if(editMode == "javascript") {var file = new File([js.getValue()], "test.js", {type: "text/javascript"});}
+        if(editMode == "html") {var file = new File([html.getValue()], "site.html", {type: "text/html"});}
+        else if(editMode == "css") {var file = new File([css.getValue()], "style.css", {type: "text/css"});}
+        else if(editMode == "javascript") {var file = new File([js.getValue()], "script.js", {type: "text/javascript"});}
         saveAs(file, "test."+(editMode == "javascript" ? "js" : editMode))
     }
 
