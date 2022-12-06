@@ -91,9 +91,9 @@
 <body>
 
 <div id="nav">
-<button title="Switch to HTML" onclick="switchSession(html,'ace/mode/html')">HTML</button>
-<button title="Switch to CSS" onclick="switchSession(css,'ace/mode/css')">CSS</button>
-<button title="Switch to JS" onclick="switchSession(js,'ace/mode/javascript')">JS</button>
+<button title="Switch to HTML" onclick="switchSession(html,'html')">HTML</button>
+<button title="Switch to CSS" onclick="switchSession(css,'css')">CSS</button>
+<button title="Switch to JS" onclick="switchSession(js,'javascript')">JS</button>
 <button title="Toggle Output Sidebar" onclick="toggleOutput()">Output</button>
 <button title="Reload Output" onclick="sendOutput()">Reload</button>
 <button title="Erase everything and start anew" onclick="newFile()">New</button>
@@ -111,6 +111,7 @@
 
 <script src="ace/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
 <script src="ace/src-noconflict/ext-language_tools.js"></script>
+<script src="filesaver/dist/FileSaver.min.js"></script>
 <script>
     ace.require("ace/ext/language_tools");
     // init editor
@@ -119,6 +120,7 @@
     var editDiv = document.getElementById("editor");
     var input = document.getElementById("themePicker");
     var form = document.getElementById("form");
+    var editMode = "html"
     var savedTheme = "";
     if(window.localStorage.theme) {
         savedTheme = window.localStorage.theme;
@@ -229,6 +231,14 @@
         document.querySelector(".ace_text-input").focus();
     }
 
+    function saveFile() {
+        alert(editMode);
+        if(editMode == "html") {var file = new File([html.getValue()], "test.html", {type: "text/html"});}
+        else if(editMode == "css") {var file = new File([css.getValue()], "test.css", {type: "text/css"});}
+        else if(editMode == "javascript") {var file = new File([js.getValue()], "test.js", {type: "text/javascript"});}
+        saveAs(file, "test."+(editMode == "javascript" ? "js" : editMode))
+    }
+
     form.addEventListener("submit", (ev) => {
         ev.preventDefault();
         themey(input.value);
@@ -252,8 +262,9 @@
 
     // self-explanatory
     function switchSession(name,mode) {
+        editMode = mode;
         editor.setSession(name);
-        editor.session.setMode(mode);
+        editor.session.setMode("ace/mode/"+mode);
         document.querySelector(".ace_text-input").focus();
     }
 </script>
