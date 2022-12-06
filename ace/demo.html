@@ -232,7 +232,7 @@
     }
 
     function saveFile() {
-        alert(editMode);
+        // alert(editMode);
         if(editMode == "html") {var file = new File([html.getValue()], "test.html", {type: "text/html"});}
         else if(editMode == "css") {var file = new File([css.getValue()], "test.css", {type: "text/css"});}
         else if(editMode == "javascript") {var file = new File([js.getValue()], "test.js", {type: "text/javascript"});}
