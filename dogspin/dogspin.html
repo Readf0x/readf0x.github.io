@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html lang='en'>
+    <head>
+        <title>dogspin</title>
+        <link rel='icon' type='image/gif' href='dogspin.gif'>
+        <style>
+            @font-face {
+                font-family: 'Roboto Mono';
+                font-style: normal;
+                src: url("RobotoMono-VariableFont_wght.ttf");
+            }
+            html, body {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                /* background-color: black; */
+            }
+            .dog-wrapper {
+                position: fixed;
+                display: flex;
+                align-items: center;
+                height: 100%;
+                overflow: hidden;
+                width: 100%;
+                background-color: white;
+                z-index: 1;
+            }
+            /* .progress-wrapper {
+                position: fixed;
+                z-index: 2;
+                display: flex;
+                justify-content: center;
+                width: 100%;
+            } */
+            .load-bar {
+                position: fixed;
+                height: 128px;
+                width: 0;
+                background-color: #0ff;
+                z-index: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            img {
+                position: fixed;
+                left: 0px;
+                z-index: 2;
+                overflow: hidden;
+            }
+            #progress {
+                font-family: 'Roboto Mono';
+            }
+        </style>
+    </head>
+    <body>
+        <!-- <p id="test">test</p> -->
+        <div class="dog-wrapper" onclick="cursorFunc()">
+            <img src="dogspin-load.gif" alt="spinny doggo" height="128px" style="left: -121px">
+            <div class="load-bar"><h1 id="progress"> </h1></div>
+        </div>
+        <script>
+            const div = document.querySelector(".dog-wrapper");
+            const loadBar = document.querySelector(".load-bar");
+            const progress = document.querySelector("#progress");
+            // const test = document.querySelector("#test");
+            div.style.cursor = "auto";
+            
+            function cursorFunc() {
+                if(div.style.cursor == "none") {
+                    div.style.cursor = "auto";
+                    document.exitFullscreen();
+                } else {
+                    div.style.cursor = "none";
+                    document.requestFullscreen();
+                }
+            }
+
+            function dogInit() {
+                // todo: write initializer
+            }
+
+            var dog = document.querySelector('img[alt="spinny doggo"]');
+            dog.style.left = "-15%";
+
+            // todo: allow for multiple dogs
+            function pushDog() {
+                setTimeout(() => {
+                    // if(parseInt(dog.style.left.replace("%", "")) == 100) {dog.style.left = "-15%"; loadBar.style.width = "0"; progress.innerHTML = "0% Loaded"}
+                    dog.style.left = (0.1 + parseFloat(dog.style.left.replace("%", ""))).toString() + "%";
+                    loadBar.style.width = (0.1 + parseFloat(dog.style.left.replace("%", ""))).toString() + "%";
+                    if(parseFloat(dog.style.left.replace("%", "")) >= 0) {progress.innerHTML = parseFloat(dog.style.left.replace("%", "")).toFixed(1) + "%" + " Loaded";}
+                    if(parseInt(dog.style.left.replace("%", "")) != 100) {pushDog();}
+            }, 2)
+            }
+            pushDog();
+        </script>
+    </body>
+</html>
